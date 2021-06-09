@@ -1,0 +1,99 @@
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 4rem;
+    background-color: rgb(36, 36, 36);
+    /* border: 5px solid rgb(45, 78, 226); */
+}
+
+ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: auto;
+    color: red;
+    text-decoration: none;
+    list-style: none;
+    /* border:1px solid rgb(161, 8, 15); */
+    padding: 0;
+    margin: 0;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 100%;
+    padding: 0 1rem ;
+    width: auto;
+    /* border:1px solid red; */
+}
+
+li:hover{
+    background-color: rgb(53, 53, 53);
+}
+
+.contenedorimg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    color: yellowgreen;
+    height: 100%;
+    width: 12rem;
+    /* border: 1px solid rgb(255, 60, 0); */
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 900;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem; 
+    height: 2rem;
+    padding-right: 10px;
+    /* border: 1px solid yellowgreen; */
+}
+
+.chango{
+    width: 1.5rem; 
+    height: 1.5rem;
+}
+
+.menu{
+    width: 2rem; 
+    height: 2rem;
+    /* border: 1px solid red; */
+}
+
+.onlyresponsive{
+    display: none;
+}
+
+
+@media (max-width: 700px) {
+    .responsive {
+      display: none;
+    }
+
+    .onlyresponsive{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 3rem;
+        height: 3rem;
+        /* border: yellowgreen 1px solid; */
+        margin-left: 10px;
+    }
+
+  }
+  
