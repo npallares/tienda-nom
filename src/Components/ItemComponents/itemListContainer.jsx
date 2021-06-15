@@ -1,8 +1,7 @@
 import "./style.css"
 import { Card } from "./card.jsx"
-import "./assets/adidas.jpg"
-import adidas from "./assets/adidas.jpg"
-import nike from "./assets/nike.jpg"
+import nike from"./assets/nike.jpg"
+import adidas from"./assets/adidas.jpg"
 
 export const ItemListContainer = ({data}) =>{
     
@@ -14,10 +13,11 @@ export const ItemListContainer = ({data}) =>{
                 <h1>{data}</h1>
             </div>
             <div className="itemContainer">
-                <Card img={adidas} title={"Zapatillas Adidas"} description={"Lorem ipsum dolor sit amet consectetur adipisicing elit."} />
-                <Card img={nike} title={"Zapatillas Nike"} description={"Lorem ipsum dolor sit amet consectetur adipisicing elit."} />
-                <Card img={adidas} title={"Zapatillas Adidas"} description={"Lorem ipsum dolor sit amet consectetur adipisicing elit."} />
-                <Card img={nike} title={"Zapatillas Nike"} description={"Lorem ipsum dolor sit amet consectetur adipisicing elit."} />
+                 <Card img={nike}title={"zapatillas Nike"} description={"Descripción zapatillas Nike, Descripción zapatillas Nike"}/>
+                 <Card img={nike}title={"zapatillas Nike"} description={"Descripción zapatillas Nike, Descripción zapatillas Nike"}/>
+                 <Card img={adidas}title={"zapatillas Adidas"} description={"Descripción zapatillas Adidas, Descripción zapatillas Adidas"}/>
+                 <Card img={adidas}title={"zapatillas Adidas"} description={"Descripción zapatillas Adidas, Descripción zapatillas Adidas"}/>
+               
             </div>
         </>
     )
