@@ -1,12 +1,14 @@
 import './App.css';
 import { Navbar } from './Components/navbarComponents/indexNavbar';
 import { ItemListContainer} from './Components/ItemComponents/itemListContainer';
+import { Mercadolibre } from './Components/mlComponents/indexMl';
+
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Navbar/>
-      <ItemListContainer data={"Bienvenidos a la Tienda Nom"}/>
+      <Mercadolibre className="mlContainer"/>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  width: 100vw;
 }
 
 .App-logo {
@@ -55,6 +56,16 @@
 
 .price{
   font-size: 1rem;
+}
+
+.mlContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid green;
+  width: 100vw;
+  height: 100%;
+  flex-wrap: wrap;
 }
 
 .test{

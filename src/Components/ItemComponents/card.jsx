@@ -5,8 +5,9 @@ export const Card = ({img,title,description}) =>{
             <img src={img} alt="" className="imagen"/>
             <div>
                 <h2 className="title">{title}</h2>
-                <p className="description">{description}</p>
+                <p className="description">$ {description}</p>
             </div>
+            <button className="button">Agregar al carrito</button>
         </div>
         </>
     )
