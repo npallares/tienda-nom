@@ -85,13 +85,14 @@ h1{
     width: 75%;
     margin-top: -.5rem;
     border: 1px solid rgb(91, 93, 216);
-    background-color: none;
     border-radius: 20px;
-    color: rgb(91, 93, 216);
+    background-color: rgb(91, 93, 216);
+    color: white;
+    
 }
 
 .button:hover{
-    background-color: rgb(91, 93, 216);
-    color: white;
+    background-color: white;
+    color: rgb(91, 93, 216);
     cursor: pointer;
 }
