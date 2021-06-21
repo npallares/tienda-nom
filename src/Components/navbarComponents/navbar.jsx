@@ -1,7 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
 import "./navbar.css"
-import logo from "./assets/logo.png"
-import chango from "./assets/chango.png"
 import menu from "./assets/menu.png"
 import { LogoModule } from "./logo.jsx"
 

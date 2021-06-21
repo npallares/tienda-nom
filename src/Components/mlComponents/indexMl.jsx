@@ -7,7 +7,7 @@ export const Mercadolibre = () =>{
     const [items, setItems] = useState([]);
     
     useEffect(()=>{
-        document.title="Hola"
+        document.title="Tienda Nom"
 
         const waitForData = async () =>{
             let data = await getData("nike")

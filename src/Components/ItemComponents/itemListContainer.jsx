@@ -1,7 +1,4 @@
 import "./style.css"
-import { Card } from "./card.jsx"
-import nike from"./assets/nike.jpg"
-import adidas from"./assets/adidas.jpg"
 import {Contador} from "../productComponents/indexProduct.jsx"
 
 export const ItemListContainer = ({data}) =>{
