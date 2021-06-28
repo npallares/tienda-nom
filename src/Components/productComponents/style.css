@@ -32,6 +32,9 @@
     width: 75%;
     text-align:left ;
     margin-top: 0rem;
+    font-size: .8rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     /* border: 1px solid salmon; */
 }
 
@@ -51,7 +54,7 @@
     width: 75%;
     /* border: 1px solid salmon; */
     color: rgb(91, 93, 216);
-    margin-top: -.5rem;
+    margin-top: -.2rem;
 }
 
 .btn_container_product{

@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./style.css";
 import nike from "../ItemComponents/assets/nike.jpg";
 
-let description =
+/* let description =
   "Las zapatillas Adidas Multix confeccionadas en exterior deportivo de malla mantiene tus pies cómodos sin importar lo que te depare del día. La suela de caucho ofrece el agarre que necesitás, mientras que el diseño deportivo con colores impactantes te dan el estilo ideal para la vida urbana. ";
 
-let title = "Zapatillas Nike Air Max 90";
+let title = "Zapatillas Nike Air Max 90"; */
 
-export const Contador = () => {
-  const [stock, setStock] = useState(5);
+export const Contador = ({img,title,description,stock1,cantidad}) => {
+  const [stock, setStock] = useState(0);
   const [numero, setNumero] = useState(0);
 
   const aumentar = () => {
@@ -27,13 +27,22 @@ export const Contador = () => {
     }
   };
 
+  const setear = (cantidad) =>{
+    setStock(stock + cantidad);
+  }
+  
+
+  useEffect(()=>{
+    setear(cantidad)
+  },[])
+    
   return (
     <>
       <div className="container_product">
-        <img src={nike} alt="" />
+        <img src={img} alt="" />
         <div className="info_container_product">
           <h1 className="title_product">{title}</h1>
-          <p className="description_product">{description}</p>
+          <p className="description_product">Precio ${description}</p>
           <h3 className="stock_product">Productos en Stock {stock}</h3>
           <div className="btn_container_product">
             <button onClick={reducir}> -</button>

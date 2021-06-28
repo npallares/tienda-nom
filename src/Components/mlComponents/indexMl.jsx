@@ -10,7 +10,7 @@ export const Mercadolibre = () =>{
         document.title="Tienda Nom"
 
         const waitForData = async () =>{
-            let data = await getData("nike")
+            let data = await getData("supermercado")
             let aux = data.map(el=>{
                 return{
                     title: el.title,
