@@ -1,16 +1,13 @@
 import './App.css';
 import { Navbar } from './Components/navbarComponents/indexNavbar';
-import { ItemListContainer} from './Components/ItemComponents/itemListContainer';
-import { Mercadolibre } from './Components/mlComponents/indexMl';
-import { Formulario } from './Components/formularioComponents/indexFormulario';
+import { ItemDetailContainer} from './Components/detailComponents/itemDetailContainer';
 
 
 function App() {
   return (
     <div>
       <Navbar/>
-      {/* <Mercadolibre className="mlContainer"/> */}
-      <ItemListContainer/>
+      <ItemDetailContainer/>
     </div>
   );
 };

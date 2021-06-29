@@ -1,6 +1,6 @@
 import "./style.css"
 import React, { useState, useEffect } from "react";
-import {Contador} from "../productComponents/indexProduct.jsx"
+import {Detail} from "../productComponents/indexProduct.jsx"
 import { getData } from "../../util/getdata";
 
 export const ItemListContainer = () =>{
@@ -44,7 +44,7 @@ export const ItemListContainer = () =>{
                 items.map(el=>{
                     if( contador == 0 ){
                         contador = 1;
-                        return <Contador img={el.img} title={el.title} description={el.price} cantidad={el.quantity}/>
+                        return <Detail img={el.img} title={el.title} description={el.price} cantidad={el.quantity}/>
                     } 
                     
                 })}

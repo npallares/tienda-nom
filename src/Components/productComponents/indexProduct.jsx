@@ -1,13 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
-import nike from "../ItemComponents/assets/nike.jpg";
 
-/* let description =
-  "Las zapatillas Adidas Multix confeccionadas en exterior deportivo de malla mantiene tus pies cómodos sin importar lo que te depare del día. La suela de caucho ofrece el agarre que necesitás, mientras que el diseño deportivo con colores impactantes te dan el estilo ideal para la vida urbana. ";
-
-let title = "Zapatillas Nike Air Max 90"; */
-
-export const Contador = ({img,title,description,stock1,cantidad}) => {
+export const Detail = ({img,title,price,cantidad}) => {
+ /*  const num = cantidad */
   const [stock, setStock] = useState(0);
   const [numero, setNumero] = useState(0);
 
@@ -26,12 +21,12 @@ export const Contador = ({img,title,description,stock1,cantidad}) => {
       setStock(stock + 1);
     }
   };
-
+  
   const setear = (cantidad) =>{
-    setStock(stock + cantidad);
+    setStock(cantidad);
   }
   
-
+  
   useEffect(()=>{
     setear(cantidad)
   },[])
@@ -42,8 +37,8 @@ export const Contador = ({img,title,description,stock1,cantidad}) => {
         <img src={img} alt="" />
         <div className="info_container_product">
           <h1 className="title_product">{title}</h1>
-          <p className="description_product">Precio ${description}</p>
-          <h3 className="stock_product">Productos en Stock {stock}</h3>
+          <p className="description_product">Precio ${price}</p>
+          <h3 className="stock_product">Productos en Stock {cantidad}</h3>
           <div className="btn_container_product">
             <button onClick={reducir}> -</button>
             <div>{numero}</div>
