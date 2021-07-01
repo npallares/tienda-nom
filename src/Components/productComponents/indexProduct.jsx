@@ -34,11 +34,13 @@ export const Detail = ({img,title,price,cantidad}) => {
   return (
     <>
       <div className="container_product">
-        <img src={img} alt="" />
+        <div className="container_img">
+          <img src={img} alt="" />
+        </div>  
         <div className="info_container_product">
           <h1 className="title_product">{title}</h1>
-          <p className="description_product">Precio ${price}</p>
-          <h3 className="stock_product">Productos en Stock {cantidad}</h3>
+          <p className="description_product">Precio $ {price}</p>
+          <h3 className="stock_product">Productos en Stock: {stock}</h3>
           <div className="btn_container_product">
             <button onClick={reducir}> -</button>
             <div>{numero}</div>

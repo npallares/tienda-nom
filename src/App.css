@@ -25,6 +25,10 @@
   color: white;
 }
 
+.red{
+  color: red;
+}
+
 .card{
   display: flex;
   justify-content: center;

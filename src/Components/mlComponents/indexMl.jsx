@@ -10,9 +10,10 @@ export const Mercadolibre = () =>{
         document.title="Tienda Nom"
 
         const waitForData = async () =>{
-            let data = await getData("supermercado")
+            let data = await getData("adidas")
             let aux = data.map(el=>{
                 return{
+                    id: el.id,
                     title: el.title,
                     img: el.thumbnail,
                     price: el.price
@@ -25,13 +26,13 @@ export const Mercadolibre = () =>{
 
     },[])
     
-    console.log(items)
+    /* console.log(items) */
 
     return(
         <div className="mlContainer">
             {items.map(el=>{
                 return(
-                    <Card img={el.img} title={el.title} description={el.price}/>
+                    <Card img={el.img} title={el.title} description={el.price} id={el.id}/>
                 )
             })}
         </div>

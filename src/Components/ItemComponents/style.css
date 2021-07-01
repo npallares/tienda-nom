@@ -27,33 +27,43 @@ h1{
 .card{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
     min-width: 250px;
     max-width: 250px;
-    min-height: 350px;
-    max-height: 350px;
-    border: 2px solid rgb(210, 211, 247);
+    height: 250px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 19px 2px #c4c4c4;
     background-color: white;
-    border-radius: 15px;
     margin: 1rem 10px;
 }
 
-.card img{
-    width: 65%;
-    height: auto;
+.imgContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 12rem;
+    /* border: 1px solid red; */
 }
 
-.imagen{
-    width: 90%;
-    height: auto;
+.card img{
+    max-width: 90%;
+    max-height: 11rem;
 }
+
+/* .imagen{
+    max-width: 90%;
+    max-height: 5rem;
+} */
 
 .textContainer{
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    /* border: 1px solid blue; */
 }
 
 .title{
@@ -70,7 +80,7 @@ h1{
 .description{
     text-align: center;
     align-items: center;
-    width: 90%;
+    width: 100%;
     color: rgb(113, 115, 218);
     font-size: 1rem;
     font-weight: 600;
@@ -91,21 +101,33 @@ h1{
     font-size: .8rem;
     font-weight: 400;
     height: 2rem;
-    width: 75%;
+    width: 250px;
     margin-top: .5rem;
     border: 1px solid rgb(91, 93, 216);
-    border-radius: 20px;
+    border-radius: 0 0 10px 10px;
     background-color: rgb(91, 93, 216);
-    color: white;
-    
+    color: white;    
+}
+
+.button a{
+    color: rgb(0, 255, 255);
 }
 
 .button:hover{
-    background-color: white;
-    color: rgb(91, 93, 216);
+    border: 1px solid rgb(123, 123, 161);
+    background-color: rgb(123, 123, 161);
+    color: rgb(255, 255, 255);
     cursor: pointer;
+}
+
+.button a:hover{
+    color: rgb(252, 35, 35);
 }
 
 p{
     margin: 0;
+}
+
+a:link, a:visited, a:active {
+    text-decoration:none;
 }
