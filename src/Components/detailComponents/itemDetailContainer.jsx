@@ -39,7 +39,7 @@ export const ItemDetailContainer = () =>{
             waitForData()
             
        
-    },[])
+    },[productoId])
     
     
     if(loading) return <h3>Loading</h3>
