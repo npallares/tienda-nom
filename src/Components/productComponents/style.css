@@ -110,3 +110,14 @@
     cursor: pointer;
 }
 
+.none{
+    display:none;
+}
+
+.compra-finalizada{
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: green;
+}
+

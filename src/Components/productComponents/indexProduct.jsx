@@ -6,12 +6,21 @@ export const Detail = ({img,title,price,cantidad}) => {
   const [stock, setStock] = useState(0);
   const [numero, setNumero] = useState(0);
 
+  const eliminar =() =>{
+    const $btn=document.getElementById("btn")
+    const $finalizada=document.getElementById("finalizada")
+    $btn.classList.add("none")
+    $finalizada.classList.remove("none")
+    alert(`Agregaste ${numero} productos al carrito`)
+  }
+
+
   const aumentar = () => {
     if (!stock <= 0) {
       console.log("Click Aumentar");
       setNumero(numero + 1);
       setStock(stock - 1);
-    }
+    }else{alert("No se admite cantidad mayor al stock")}
   };
 
   const reducir = () => {
@@ -19,7 +28,7 @@ export const Detail = ({img,title,price,cantidad}) => {
       console.log("Click Reducir");
       setNumero(numero - 1);
       setStock(stock + 1);
-    }
+    } else{alert("No se admite cantidad negativa - ")}
   };
   
   const setear = (cantidad) =>{
@@ -46,7 +55,8 @@ export const Detail = ({img,title,price,cantidad}) => {
             <div>{numero}</div>
             <button onClick={aumentar}>+</button>
           </div>
-          <button className="btn_cart_product">Agregar al carrito</button>
+          <button id="btn"className="btn_cart_product" onClick={eliminar}>Agregar al carrito</button>
+          <div id="finalizada"className="compra-finalizada none">COMPRA FINALIZADA</div>
         </div>
       </div>
     </>
