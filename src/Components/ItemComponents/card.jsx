@@ -1,10 +1,6 @@
 import { Link } from "react-router-dom"
 
-<<<<<<< HEAD
-export const Card = ({img,price,id}) =>{
-=======
 export const Card = ({img,id,price}) =>{
->>>>>>> prueba
     return(
         <>
         <div className="card">
