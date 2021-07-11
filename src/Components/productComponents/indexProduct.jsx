@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useContext } from "react";
 import "./style.css";
 
 export const Detail = ({img,title,price,cantidad}) => {
