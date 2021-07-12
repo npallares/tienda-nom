@@ -6,6 +6,7 @@ export const CartComponentContext = ({children}) =>{
 
     const [info, setInfo]= useState([])
     const [aux, setAux]=useState([])
+    const [it, setIt]=useState([])
     
     let filtrado = info.map(el => {
         return el.img
@@ -22,6 +23,7 @@ export const CartComponentContext = ({children}) =>{
     }
     
     useEffect(() => {
+        setIt()
         console.log(info)
         console.log(aux)
         console.log(buscador)

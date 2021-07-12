@@ -6,9 +6,15 @@ import { CartDetailList } from "./cartDetailList";
 
 export const CartListComponent = () =>{
 
+
     const cartGlobal = useContext(CartContext)
 
     const [lista, setLista] = useState([])
+    
+    const reset = () =>{
+        cartGlobal.setInfo([])
+        setLista([])
+    }
     
     useEffect(() => {
         setLista(cartGlobal.info)
@@ -16,12 +22,16 @@ export const CartListComponent = () =>{
 
     return(
         <div>
-            {lista.map(el=>{
-                return(
-                    <CartDetailList {...el}/>
-                    )
-                })}
+            <div>
+                {lista.map(el=>{
+                    return(
+                        <CartDetailList {...el}/>
+                        )
+                    })
+                }
+
+                <button onClick={reset}>Reset</button>
+            </div>
         </div>
-        
     )
 }
