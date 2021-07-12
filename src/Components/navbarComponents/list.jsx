@@ -1,5 +1,6 @@
 import "./navbar.css"
 import chango from "./assets/chango.png"
+import { Link } from "react-router-dom"
 
 export const ListModule = () =>{
     return(
@@ -13,7 +14,7 @@ export const ListModule = () =>{
                 <li>Historial</li>
                 <li>Supermercado</li>
                 <li>Moda</li>
-                <li><img src={chango} className="chango" /></li>
+                <Link to={`/cart`}><li><img src={chango} className="chango" /></li></Link>
             </ul>
         </>
     )

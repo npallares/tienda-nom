@@ -1,11 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { useContext } from "react";
+import { CartContext } from "../../context/cartContext";
+import { Link } from "react-router-dom";
+
 import "./style.css";
 
 export const Detail = ({img,title,price,cantidad}) => {
- /*  const num = cantidad */
+
+  
   const [stock, setStock] = useState(0);
   const [numero, setNumero] = useState(0);
+
+  const cartGlobal = useContext(CartContext)
+
+  const prueba = () =>{
+    
+  }
+
 
   const eliminar =() =>{
     const $btn=document.getElementById("btn")
@@ -13,6 +24,19 @@ export const Detail = ({img,title,price,cantidad}) => {
     $btn.classList.add("none")
     $finalizada.classList.remove("none")
     alert(`Agregaste ${numero} productos al carrito`)
+    
+      cartGlobal.setAux([{img:img,numero:numero}])
+      
+      cartGlobal.setInfo([...cartGlobal.info,
+        {
+          img:img,
+          title:title,
+          price:price,
+          numero:numero 
+        }
+      ])
+
+    
   }
 
 
@@ -36,9 +60,9 @@ export const Detail = ({img,title,price,cantidad}) => {
     setStock(cantidad);
   }
   
-  
   useEffect(()=>{
-    setear(cantidad)
+    setear(cantidad);
+      
   },[])
     
   return (

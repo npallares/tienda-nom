@@ -1,0 +1,39 @@
+.container_cart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerBox{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 80px;
+    width: 80%;
+    border: 1px solid red;
+}
+
+.containerBox img{
+    height:70px;
+    width: auto;
+}
+
+.title_container{
+    width: 30%;
+    height: auto;
+    font-size: 1rem;
+    border:1px solid blue;
+}
+.price_container{
+    width: auto;
+    height: auto;
+    font-size: 1rem;
+    font-weight: 500;
+    border:1px solid rgb(0, 255, 34);
+}
+.numero_container{
+    width: auto;
+    height: auto;
+    font-size: 1rem;
+    border:1px solid rgb(255, 145, 0);
+}

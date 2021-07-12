@@ -1,14 +1,14 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { createContext } from "react";
 import { getData } from "../util/getdata";
+import { createContext } from "react";
 
 export const ShopContext = createContext();
 
 export const ShopComponentContext = ({children}) =>{
     
-    const [listProducts, setListProducts] = useState([])
-    const [loading, setLoding] = useState(true)
+    const [list, setList] = useState([])
+    
     
     useEffect(()=>{
 
@@ -24,17 +24,16 @@ export const ShopComponentContext = ({children}) =>{
                     cantidad: el.available_quantity 
                 }
             });
-            setListProducts(aux)
+            setList(aux)
         }
         waitForData()
-        setLoding(false)
-            console.log(listProducts)
+        console.log(list)
 
     }, [])
 
 
-    if(loading) return <h1>Loading</h1>
-    return <ShopContext.Provider value={listProducts} >
+   
+    return <ShopContext.Provider value={list} >
         {children}
     </ShopContext.Provider>
 }

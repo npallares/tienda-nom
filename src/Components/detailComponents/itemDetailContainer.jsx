@@ -4,11 +4,16 @@ import {Detail} from "../productComponents/indexProduct.jsx"
 import { useParams } from "react-router-dom";
 import { useContext } from "react";
 import { ShopContext } from "../../context/shopContext";
+import { CartContext } from "../../context/cartContext";
+
 
 
 export const ItemDetailContainer = () =>{
     
     const estadoGlobal = useContext(ShopContext);
+    const cartGlobal = useContext(CartContext)
+    
+    /* console.log(cartGlobal.info) */
 
     const [item, setItem] = useState();
     const [loading, setLoading] = useState(true);
@@ -22,8 +27,7 @@ export const ItemDetailContainer = () =>{
                 setItem(filtrado);
                 setLoading(false)
 
-                console.log(filtrado)
-                console.log(item)     
+                /* console.log(filtrado)  */
        
     },[productoId])
     
