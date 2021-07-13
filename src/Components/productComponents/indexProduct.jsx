@@ -13,12 +13,7 @@ export const Detail = ({img,title,price,cantidad}) => {
 
   const cartGlobal = useContext(CartContext)
 
-  const prueba = () =>{
-    
-  }
-
-
-  const eliminar =() =>{
+  const agregar =() =>{
     const $btn=document.getElementById("btn")
     const $finalizada=document.getElementById("finalizada")
     $btn.classList.add("none")
@@ -34,9 +29,7 @@ export const Detail = ({img,title,price,cantidad}) => {
           price:price,
           numero:numero 
         }
-      ])
-
-    
+      ])   
   }
 
 
@@ -80,7 +73,7 @@ export const Detail = ({img,title,price,cantidad}) => {
             <div>{numero}</div>
             <button onClick={aumentar}>+</button>
           </div>
-          <button id="btn"className="btn_cart_product" onClick={eliminar}>Agregar al carrito</button>
+          <button id="btn"className="btn_cart_product" onClick={agregar}>Agregar al carrito</button>
           <div id="finalizada"className="compra-finalizada none">COMPRA FINALIZADA</div>
         </div>
       </div>
