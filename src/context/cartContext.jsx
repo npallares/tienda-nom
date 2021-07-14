@@ -4,32 +4,29 @@ export const CartContext = createContext();
 
 export const CartComponentContext = ({children}) =>{
     
-    const [info, setInfo]= useState([])
-    const [aux, setAux]=useState([])
+    const [cart, setCart]= useState([])
     
-    
-    let filtrado = info.map(el => {
-        return el.img
-    })
-
-    let buscador = filtrado.find(el =>{ return el === aux[0].img});
-        
-    if(buscador){
-        console.log("true")
-    }else{ 
-        console.log("false")
+    const addToCart =(item)=>{
+        const itemInCart = cart.find(el=>(el.id === item.id))
+        console.log(item)
+        if(itemInCart){
+            const newCart = cart.map(el=>{
+                if(el.id === item.id){
+                    return {...el,cantidad:el.cantidad+item.cantidad}
+                }else{
+                    return el
+                } 
+            })
+            console.log(newCart)
+            setCart(newCart)
+        }else{
+            setCart([...cart,item])
+        } 
     }
     
-    useEffect(() => {
-        console.log(info)
-        console.log(aux)
-        console.log(buscador)
-        console.log(filtrado)
-
-    }, [info])
-    
-    return <CartContext.Provider value={{info, setInfo, aux, setAux}}>
+    return <CartContext.Provider value={{cart,addToCart}}>
         {children}
     </CartContext.Provider>
 
 }
+

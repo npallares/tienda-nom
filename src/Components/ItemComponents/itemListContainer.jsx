@@ -11,14 +11,7 @@ export const ItemListContainer = () =>{
     const estadoGlobal = useContext(ShopContext);
         /* console.log(estadoGlobal) */
     useEffect(()=>{
-        async function getData(){
-            document.title="Tienda Nom"
-            const db = getFirestore();
-            const collection = db.collection("productos")
-            collection.get().then(res=>{
-                console.log(res.docs.map(element => element.data()))
-            })
-        }getData()
+       
     },[])  
 
     return(

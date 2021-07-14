@@ -12,12 +12,12 @@ export const CartListComponent = () =>{
     const [lista, setLista] = useState([])
     
     const reset = () =>{
-        cartGlobal.setInfo([])
+        cartGlobal.setCart([])
         setLista([])
     }
     
     useEffect(() => {
-        setLista(cartGlobal.info)
+        setLista(cartGlobal.cart)
     }, [])
 
     return(

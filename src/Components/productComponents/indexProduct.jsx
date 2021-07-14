@@ -5,31 +5,23 @@ import { Link } from "react-router-dom";
 
 import "./style.css";
 
-export const Detail = ({img,title,price,cantidad}) => {
+export const Detail = ({img,title,price,cantidad,id}) => {
 
   
   const [stock, setStock] = useState(0);
   const [numero, setNumero] = useState(0);
 
-  const cartGlobal = useContext(CartContext)
+  const {addToCart} = useContext(CartContext)
 
-  const agregar =() =>{
-    const $btn=document.getElementById("btn")
-    const $finalizada=document.getElementById("finalizada")
-    $btn.classList.add("none")
-    $finalizada.classList.remove("none")
-    alert(`Agregaste ${numero} productos al carrito`)
-    
-      cartGlobal.setAux([{img:img,numero:numero}])
-      
-      cartGlobal.setInfo([...cartGlobal.info,
-        {
-          img:img,
-          title:title,
-          price:price,
-          numero:numero 
-        }
-      ])   
+  console.log(cantidad)
+  
+
+  const agregar=()=>{
+
+      addToCart({
+        id,price,title,img,cantidad:numero
+      })
+
   }
 
 

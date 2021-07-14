@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { getData } from "../util/getdata";
 import { createContext } from "react";
+import { getFirestore } from "../client/client";
 
 export const ShopContext = createContext();
 
@@ -11,22 +11,16 @@ export const ShopComponentContext = ({children}) =>{
     
     
     useEffect(()=>{
-
-        const waitForData = async () =>{
-            let data = await getData("river")
-            console.log(data)
-            let aux = data.map(el=>{
-                return{
-                    id: el.id,
-                    title: el.title,
-                    img: el.thumbnail,
-                    price: el.price,
-                    cantidad: el.available_quantity 
-                }
-            });
-            setList(aux)
+        
+        async function getData(){
+            const DB = getFirestore(); // Conexion base de datos
+            const COLLECTION = DB.collection("productos") // tomamos coleccion
+            const RESPONSE = await COLLECTION.get()
+                setList(RESPONSE.docs.map (el => el.data()))
+                
         }
-        waitForData()
+        getData()
+
         console.log(list)
 
     }, [])

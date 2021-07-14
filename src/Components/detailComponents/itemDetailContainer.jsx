@@ -11,7 +11,6 @@ import { CartContext } from "../../context/cartContext";
 export const ItemDetailContainer = () =>{
     
     const estadoGlobal = useContext(ShopContext);
-    const cartGlobal = useContext(CartContext)
     
     /* console.log(cartGlobal.info) */
 
