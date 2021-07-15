@@ -8,15 +8,13 @@ import "./style.css";
 export const Detail = ({img,title,price,id,stock}) => {
 
   const [number, setNumber] = useState(0);
-  const {addToCart, cart} = useContext(CartContext)
+  const {cart, addToCart, corroborateStock} = useContext(CartContext)
   
   const setNewStock =()=>{
     const newQuantity = cart.find(el=>el.id===id)
     if(newQuantity){
       const quantity = newQuantity.stock
       setNumber(quantity)
-    }else{
-      console.log("Chau")
     }
   }
   
@@ -25,6 +23,8 @@ export const Detail = ({img,title,price,id,stock}) => {
       addToCart({
         id,price,title,img,stock:number
       })
+
+      corroborateStock({id,stock})
   }
 
   const aumentar = () => {
