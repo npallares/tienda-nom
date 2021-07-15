@@ -5,49 +5,48 @@ import { Link } from "react-router-dom";
 
 import "./style.css";
 
-export const Detail = ({img,title,price,cantidad,id}) => {
+export const Detail = ({img,title,price,id,stock}) => {
 
+  const [number, setNumber] = useState(0);
+  const {addToCart, cart} = useContext(CartContext)
   
-  const [stock, setStock] = useState(0);
-  const [numero, setNumero] = useState(0);
-
-  const {addToCart} = useContext(CartContext)
-
-  console.log(cantidad)
+  const setNewStock =()=>{
+    const newQuantity = cart.find(el=>el.id===id)
+    if(newQuantity){
+      const quantity = newQuantity.stock
+      setNumber(quantity)
+    }else{
+      console.log("Chau")
+    }
+  }
   
-
+  
   const agregar=()=>{
-
       addToCart({
-        id,price,title,img,cantidad:numero
+        id,price,title,img,stock:number
       })
-
   }
 
-
   const aumentar = () => {
-    if (!stock <= 0) {
+    if (number < stock) {
       console.log("Click Aumentar");
-      setNumero(numero + 1);
-      setStock(stock - 1);
+      setNumber(number + 1);
+      
+      
     }else{alert("No se admite cantidad mayor al stock")}
   };
 
   const reducir = () => {
-    if (!numero <= 0) {
+    if (number > 0) {
       console.log("Click Reducir");
-      setNumero(numero - 1);
-      setStock(stock + 1);
+      setNumber(number- 1);
+      
+      
     } else{alert("No se admite cantidad negativa - ")}
   };
   
-  const setear = (cantidad) =>{
-    setStock(cantidad);
-  }
-  
   useEffect(()=>{
-    setear(cantidad);
-      
+    setNewStock()
   },[])
     
   return (
@@ -62,7 +61,7 @@ export const Detail = ({img,title,price,cantidad,id}) => {
           <h3 className="stock_product">Productos en Stock: {stock}</h3>
           <div className="btn_container_product">
             <button onClick={reducir}> -</button>
-            <div>{numero}</div>
+            <div>{number}</div>
             <button onClick={aumentar}>+</button>
           </div>
           <button id="btn"className="btn_cart_product" onClick={agregar}>Agregar al carrito</button>

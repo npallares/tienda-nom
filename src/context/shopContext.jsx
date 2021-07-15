@@ -21,7 +21,7 @@ export const ShopComponentContext = ({children}) =>{
         }
         getData()
 
-        console.log(list)
+        /* console.log(list) */
 
     }, [])
 
