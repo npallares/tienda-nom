@@ -3,7 +3,9 @@ import "./navbar.css"
 import menu from "./assets/menu.png"
 import { LogoModule } from "./logo.jsx"
 
+
 export const Navbar =()=> {
+
     return(
         <span>
             <link rel="preconnect" href="https://fonts.gstatic.com"/>

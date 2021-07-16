@@ -8,7 +8,7 @@ import "./style.css";
 export const Detail = ({img,title,price,id,stock}) => {
 
   const [number, setNumber] = useState(0);
-  const {cart, addToCart, corroborateStock} = useContext(CartContext)
+  const {cart, addToCart, corroborateStock,itemsQuantity} = useContext(CartContext)
   
   const setNewStock =()=>{
     const newQuantity = cart.find(el=>el.id===id)
@@ -25,6 +25,11 @@ export const Detail = ({img,title,price,id,stock}) => {
       })
 
       corroborateStock({id,stock})
+
+      itemsQuantity(number)
+
+      
+      alert("Agregaste este producto al carrito")
   }
 
   const aumentar = () => {

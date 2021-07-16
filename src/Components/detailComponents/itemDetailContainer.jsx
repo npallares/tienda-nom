@@ -34,7 +34,7 @@ export const ItemDetailContainer = () =>{
 
     return(
         <>
-            <div className="container">
+            <div className="container_general_product" >
                 <Detail {...item[0]}/>
             </div>
         </>

@@ -14,6 +14,7 @@ export const CartListComponent = () =>{
     const reset = () =>{
         cartGlobal.setCart([])
         setLista([])
+        cartGlobal.setCartQuantity(0)
     }
     
     useEffect(() => {
@@ -21,16 +22,18 @@ export const CartListComponent = () =>{
     }, [])
 
     return(
-        <div>
-            <div>
+        <div className="container_general">
+            <div className="container_cart_all">
                 {lista.map(el=>{
                     return(
-                        <CartDetailList {...el}/>
+                        <div>
+                            <CartDetailList {...el}/>
+                        </div>
                         )
                     })
                 }
 
-                <button onClick={reset}>Reset</button>
+                <button className ="btn" onClick={reset}>Reset Cart</button>
             </div>
         </div>
     )
