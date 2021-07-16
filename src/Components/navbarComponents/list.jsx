@@ -7,7 +7,7 @@ import { CartContext } from "../../context/cartContext";
 export const ListModule = () =>{
 
     const {cartQuantity} = useContext(CartContext)
-    console.log(cartQuantity)
+    /* console.log(cartQuantity) */
 
     useEffect(() => {
         const setSpan=()=>{

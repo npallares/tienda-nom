@@ -2,17 +2,40 @@ import React, { useState, useEffect } from "react";
 import "./style.css";
 import { useContext } from "react";
 import { CartContext } from "../../context/cartContext";
+import { Link } from "react-router-dom"
 
-export const CartDetailList = ({img,title,price,stock}) =>{
+export const CartDetailList = ({img,title,price,stock,id}) =>{
+
+    const {newQuantityShopSuma, newQuantityShopResta, cart} = useContext(CartContext)
+
+   const sumar =()=>{
+    newQuantityShopSuma(stock,id)
+   }
+   const restar =()=>{
+    newQuantityShopResta(stock,id)
+   }
+
     return(
-        <div className="container_cart">
+       
             <div className="containerBoxCart">
-                <div><img src={img} alt="" srcset="" /></div>
-                <div className="title_container">{title}</div>
-                <div className="numero_container">Precio Unitario <b>${price}</b></div>
-                <div className="numero_container">Cantidad: <b>{stock}</b></div>
-                <div className="price_container">Total <b>${stock*price}</b></div>   
+                <ul>
+                    <li><div><img src={img} alt="" srcset="" /></div></li>
+                    <li><div className="title_container">{title}</div></li>
+                    <li><div className="numero_container">Eliminar</div></li>
+                    <li> 
+                        <div className="numero_container">
+                            <button onClick={restar}>-</button>
+                            <b>{stock}</b>
+                            <button onClick={sumar}>+</button>
+                        </div>
+                    </li>
+                    <li><div className="price_container">
+                        <div className="unitary_price">Precio ${price}</div>
+                        <div className="price">${stock*price}</div>
+                        </div>
+                    </li>
+                </ul>
             </div>
-        </div>
+        
     )
 }

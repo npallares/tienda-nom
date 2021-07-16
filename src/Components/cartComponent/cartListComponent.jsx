@@ -7,26 +7,26 @@ import { CartDetailList } from "./cartDetailList";
 export const CartListComponent = () =>{
 
 
-    const cartGlobal = useContext(CartContext)
+    const {cart, setCart, setCartQuantity} = useContext(CartContext)
 
     const [lista, setLista] = useState([])
     
     const reset = () =>{
-        cartGlobal.setCart([])
+        setCart([])
         setLista([])
-        cartGlobal.setCartQuantity(0)
+        setCartQuantity(0)
     }
     
     useEffect(() => {
-        setLista(cartGlobal.cart)
-    }, [])
+        setLista(cart)
+    }, [cart])
 
     return(
         <div className="container_general">
             <div className="container_cart_all">
                 {lista.map(el=>{
                     return(
-                        <div>
+                        <div className="container_cart">
                             <CartDetailList {...el}/>
                         </div>
                         )

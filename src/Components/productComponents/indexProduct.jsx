@@ -65,7 +65,7 @@ export const Detail = ({img,title,price,id,stock}) => {
           <p className="description_product">Precio $ {price}</p>
           <h3 className="stock_product">Productos en Stock: {stock}</h3>
           <div className="btn_container_product">
-            <button onClick={reducir}> -</button>
+          <button onClick={reducir}> -</button>
             <div>{number}</div>
             <button onClick={aumentar}>+</button>
           </div>

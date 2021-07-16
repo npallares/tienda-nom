@@ -11,6 +11,7 @@ export const CartComponentContext = ({children}) =>{
     const [cart, setCart]= useState([])
     const [cartQuantity, setCartQuantity]= useState([])
     const [corroborate,setCorroborate] = useState(0)
+    const [quantityShop,setQuantityShop] = useState(0)
 
     const estadoGlobal = useContext(ShopContext);
 
@@ -48,13 +49,86 @@ export const CartComponentContext = ({children}) =>{
         }         
     }
 
+
+
     const itemsQuantity=(itemQunatity)=>{
         const setQuantity = cart.reduce((acc,el)=> acc + el.stock,0)
         const newQuantity = setQuantity + itemQunatity
         setCartQuantity(newQuantity)
     }
+
+
+
+    const newQuantityShopSuma =(number,id)=>{
+        
+        const newNumber = number+1
+
+        const maxAux = estadoGlobal.find(el=>el.id === id)
+
+        if(newNumber>=maxAux.stock+1){
+            
+        }else{
+
+            const aux = cart.find(el=>el.id === id)
+
+            const newStockCart = cart.map(el=>{
+                if(el === aux){
+                    return{...el,stock:newNumber}
+                }else{
+                    return(el)
+                }
+            })
+
+            setCart(newStockCart)
+
+            // seteo de icono chango
+
+            const newCartIconNumber = cart.reduce((acc,el)=> acc + el.stock,1)
+            console.log(newCartIconNumber)
+            
+            setCartQuantity(newCartIconNumber)
+        }
+
+        console.log(estadoGlobal)
+        console.log(maxAux.stock)
+
+    }
+
+
+
+    const newQuantityShopResta =(number,id)=>{
+        
+        const newNumber = number-1
+
+        if(newNumber<0){
+            
+        }else{
+
+            const aux = cart.find(el=>el.id === id)
+
+            const newStockCart = cart.map(el=>{
+                if(el === aux){
+                    return{...el,stock:newNumber}
+                }else{
+                    return(el)
+                }
+            })
+
+            setCart(newStockCart)
+
+            // seteo de icono chango
+
+            const newCartIconNumber = cart.reduce((acc,el)=> acc - el.stock,1)
+            console.log(newCartIconNumber)
+            
+            const posNum = (newCartIconNumber < 0) ? newCartIconNumber * -1 : newCartIconNumber;
+
+            setCartQuantity(posNum)
+        }
+
+    }
    
-    return <CartContext.Provider value={{cart, setCart, addToCart, corroborateStock,itemsQuantity,cartQuantity,setCartQuantity}}>
+    return <CartContext.Provider value={{cart, setCart, addToCart, corroborateStock,itemsQuantity,cartQuantity,setCartQuantity,newQuantityShopSuma,newQuantityShopResta}}>
         {children}
     </CartContext.Provider>
 
