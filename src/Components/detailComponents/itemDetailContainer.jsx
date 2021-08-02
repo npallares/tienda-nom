@@ -21,7 +21,6 @@ export const ItemDetailContainer = () =>{
     useEffect(()=>{
         
             document.title="Tienda Nom"
-                console.log(estadoGlobal)
                 let filtrado = estadoGlobal.filter(el=> `:${el.id}` == productoId)
                 setItem(filtrado);
                 setLoading(false)

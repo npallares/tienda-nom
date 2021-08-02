@@ -16,7 +16,8 @@ export const ShopComponentContext = ({children}) =>{
             const DB = getFirestore(); // Conexion base de datos
             const COLLECTION = DB.collection("productos") // tomamos coleccion
             const RESPONSE = await COLLECTION.get()
-                setList(RESPONSE.docs.map (el => el.data()))
+            setList(RESPONSE.docs.map (el => el.data()))
+            localStorage.setItem("store","data")
                 
         }
         getData()

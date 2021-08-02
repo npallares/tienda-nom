@@ -28,6 +28,7 @@ export const CartComponentContext = ({children}) =>{
         if(itemInCart){
             const newCart = cart.map(el=>{
                 if(el.id === item.id && el.stock >= corroborate.stock){     // comprobación de cantidad menor al stock                   
+                    console.log(corroborate)
                     return {...el,stock:corroborate.stock}          // seteo de item con cantidad maxima : stock     
                 }else if(el.id === item.id){  
                     if(el.stock>corroborate.stock){                        
@@ -50,11 +51,15 @@ export const CartComponentContext = ({children}) =>{
     }
 
 
+    // Seteo del numero ref. al icono cart
 
     const itemsQuantity=(itemQunatity)=>{
+
+        
         const setQuantity = cart.reduce((acc,el)=> acc + el.stock,0)
         const newQuantity = setQuantity + itemQunatity
         setCartQuantity(newQuantity)
+        console.log(newQuantity)
     }
 
 
