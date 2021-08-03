@@ -26,9 +26,11 @@ export const CartListComponent = () =>{
             <div className="container_cart_all">
                 {lista.map(el=>{
                     return(
+                        <>
                         <div className="container_cart">
                             <CartDetailList {...el}/>
                         </div>
+                        </>
                         )
                     })
                 }

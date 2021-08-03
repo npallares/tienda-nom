@@ -6,7 +6,7 @@ import { CartContext } from "../../context/cartContext";
 
 export const ListModule = () =>{
 
-    const {cartQuantity} = useContext(CartContext)
+    const {cartQuantity,cart} = useContext(CartContext)
     /* console.log(cartQuantity) */
 
     useEffect(() => {

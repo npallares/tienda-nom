@@ -4,7 +4,7 @@ import {Detail} from "../productComponents/indexProduct.jsx"
 import { useParams } from "react-router-dom";
 import { useContext } from "react";
 import { ShopContext } from "../../context/shopContext";
-import { CartContext } from "../../context/cartContext";
+
 
 
 
@@ -18,6 +18,11 @@ export const ItemDetailContainer = () =>{
     const [loading, setLoading] = useState(true);
     const {productoId} = useParams();    
 
+    const setLocalStorage = (value) =>{
+        
+        window.localStorage.setItem("product", value)
+    }
+
     useEffect(()=>{
         
             document.title="Tienda Nom"
@@ -25,15 +30,21 @@ export const ItemDetailContainer = () =>{
                 setItem(filtrado);
                 setLoading(false)
 
-                /* console.log(filtrado)  */
-       
+            if(filtrado.length > 0){
+                setLocalStorage(JSON.stringify(filtrado))
+            } else {
+                setItem(JSON.parse(window.localStorage.getItem(`product`)))
+            }
+
+               
+
     },[productoId])
     
     if(loading) return <h3>Loading</h3>
 
     return(
         <>
-            <div className="container_general_product" >
+            <div className="container_general_product">
                 <Detail {...item[0]}/>
             </div>
         </>

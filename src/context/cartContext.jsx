@@ -28,17 +28,17 @@ export const CartComponentContext = ({children}) =>{
         if(itemInCart){
             const newCart = cart.map(el=>{
                 if(el.id === item.id && el.stock >= corroborate.stock){     // comprobación de cantidad menor al stock                   
-                    console.log(corroborate)
-                    return {...el,stock:corroborate.stock}          // seteo de item con cantidad maxima : stock     
+                    return {...el,stock:el.stock}          // seteo de item con cantidad maxima : stock     
                 }else if(el.id === item.id){  
                     if(el.stock>corroborate.stock){                        
                         return {...el,stock:corroborate.stock}
                     }else{
                         const suma = el.stock + item.stock
                         if(suma > el.stock && suma > corroborate.stock){                                
-                                return{...el,stock:corroborate.stock}
+                            
+                                return{...el,stock:el.stock}
                             }                            
-                         return {...el,stock:el.stock+item.stock}
+                         return {...el,stock:suma}
                         }
                 }else{
                     return el
@@ -51,15 +51,17 @@ export const CartComponentContext = ({children}) =>{
     }
 
 
-    // Seteo del numero ref. al icono cart
+    // Seteo del numero referente al icono cart
 
     const itemsQuantity=(itemQunatity)=>{
-
-        
-        const setQuantity = cart.reduce((acc,el)=> acc + el.stock,0)
-        const newQuantity = setQuantity + itemQunatity
-        setCartQuantity(newQuantity)
-        console.log(newQuantity)
+        const findItem = cart.find(el=>el.id === itemQunatity.id)
+        if(findItem && findItem.stock + itemQunatity.number > itemQunatity.stock){
+                setCartQuantity( cart.reduce((acc,el)=>acc + el.stock,0))
+        } else {
+            const setQuantity = cart.reduce((acc,el)=> acc + el.stock,0)
+            const newQuantity = setQuantity + itemQunatity.number
+            setCartQuantity(newQuantity)
+            }
     }
 
 

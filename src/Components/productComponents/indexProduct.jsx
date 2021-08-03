@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useContext } from "react";
 import { CartContext } from "../../context/cartContext";
-import { Link } from "react-router-dom";
 
 import "./style.css";
 
@@ -9,7 +8,7 @@ export const Detail = ({img,title,price,id,stock}) => {
 
   const [number, setNumber] = useState(0);
   const {cart, addToCart, corroborateStock,itemsQuantity} = useContext(CartContext)
-  
+
   const setNewStock =()=>{
     const newQuantity = cart.find(el=>el.id===id)
     if(newQuantity){
@@ -26,7 +25,7 @@ export const Detail = ({img,title,price,id,stock}) => {
 
       corroborateStock({id,stock})
 
-      itemsQuantity(number)
+      itemsQuantity({number,id,stock})
 
       
       alert("Agregaste este producto al carrito")
@@ -51,7 +50,8 @@ export const Detail = ({img,title,price,id,stock}) => {
   };
   
   useEffect(()=>{
-    setNewStock()
+    setNewStock();
+
   },[])
     
   return (
