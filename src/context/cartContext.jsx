@@ -1,4 +1,5 @@
 import { createContext, useState, useContext, useEffect } from "react";
+import { getFirestore } from "../client/client";
 
 
 import { Detail } from "../Components/productComponents/indexProduct";
@@ -21,7 +22,8 @@ export const CartComponentContext = ({children}) =>{
         setCorroborate(corroborate)
     }
 
-    
+    // Seteo de agregado al carrito
+
     const addToCart =(item)=>{
 
         const itemInCart = cart.find(el=>(el.id === item.id))
@@ -51,6 +53,8 @@ export const CartComponentContext = ({children}) =>{
         }         
     }
 
+    // Obtener Importe Total de compra
+
     const getTotal = () =>{
         const finalPrice = cart.reduce((acc,el)=>acc + el.price*el.stock,0);
         setTotal(finalPrice);
@@ -67,11 +71,12 @@ export const CartComponentContext = ({children}) =>{
         } else {
             const setQuantity = cart.reduce((acc,el)=> acc + el.stock,0)
             const newQuantity = setQuantity + itemQunatity.number
-            setCartQuantity(newQuantity)
+            setCartQuantity(newQuantity) // seteo de icono chango
             }
     }
 
 
+    // Seteo de cantidad, al sumar el stock del productos 
 
     const newQuantityShopSuma =(number,id)=>{
         
@@ -102,13 +107,10 @@ export const CartComponentContext = ({children}) =>{
             
             setCartQuantity(newCartIconNumber)
         }
-
-        //console.log(estadoGlobal)
-        //console.log(maxAux.stock)
-
     }
 
 
+    // Seteo de cantidad, al restar el stock del productos 
 
     const newQuantityShopResta =(number,id)=>{
         
@@ -137,16 +139,25 @@ export const CartComponentContext = ({children}) =>{
             
             const posNum = (newCartIconNumber < 0) ? newCartIconNumber * -1 : newCartIconNumber;
 
-            setCartQuantity(posNum)
+            setCartQuantity(posNum) // seteo de icono chango
         }
 
+    }
+
+    // Crear orden de compra y pasaje parametros a firebase
+
+    const createOrder = (name,phone,email) =>{
+        const order = {buyer:{name,phone,email}, item:cart, finalAmount:total}
+        console.log(order)
+        const db = getFirestore();
+        db.collection("orders").add(order).then(({id}) =>{console.log(id)});
     }
 
     useEffect(() => {
         getTotal()
     }, [cart])
    
-    return <CartContext.Provider value={{cart, setCart, addToCart, corroborateStock,itemsQuantity,cartQuantity,setCartQuantity,newQuantityShopSuma,newQuantityShopResta,total}}>
+    return <CartContext.Provider value={{cart, setCart, addToCart, corroborateStock,itemsQuantity,cartQuantity,setCartQuantity,newQuantityShopSuma,newQuantityShopResta,total,createOrder}}>
         {children}
     </CartContext.Provider>
 

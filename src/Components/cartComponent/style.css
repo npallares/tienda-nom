@@ -10,12 +10,13 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 60vw;
+    width: 80%;
     border-radius: 10px;
     box-shadow: 1px 1px 19px 2px #c4c4c4;
     background-color: white;
     margin-top: 3rem;
     padding-top: 2rem;
+    min-width: 700px;
     /* border:1px solid red; */
 }
 

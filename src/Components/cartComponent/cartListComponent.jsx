@@ -7,7 +7,7 @@ import { CartDetailList } from "./cartDetailList";
 export const CartListComponent = () =>{
 
 
-    const {cart, setCart, setCartQuantity,total} = useContext(CartContext)
+    const {cart, setCart, setCartQuantity,total,createOrder} = useContext(CartContext)
 
     const [lista, setLista] = useState([])
 
@@ -45,9 +45,7 @@ export const CartListComponent = () =>{
                 <input type="text" onInput={(e)=>{setName(e.target.value)}} placeholder="Nombre" />
             </div>
                 <button onClick={()=>{
-                    console.log({name,phone,email})
-                    const venta = {buyer:{name,phone,email}, item:lista, finalPrice:total,}
-                    console.log(venta)
+                    createOrder(name,phone,email)
                 }}>Enviar</button>
             
         </div>
