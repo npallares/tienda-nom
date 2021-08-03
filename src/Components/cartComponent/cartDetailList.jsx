@@ -6,8 +6,12 @@ import { Link } from "react-router-dom"
 
 export const CartDetailList = ({img,title,price,stock,id}) =>{
 
-    const {newQuantityShopSuma, newQuantityShopResta} = useContext(CartContext)
+    const {newQuantityShopSuma, newQuantityShopResta, eliminar} = useContext(CartContext)
 
+    const borrar = () =>{
+        eliminar({img,title,price,stock,id})
+    }
+    
    const sumar =()=>{
     newQuantityShopSuma(stock,id)
    }
@@ -21,7 +25,7 @@ export const CartDetailList = ({img,title,price,stock,id}) =>{
                 <ul>
                     <li><div><img src={img} alt="" srcset="" /></div></li>
                     <li><div className="title_container">{title}</div></li>
-                    <li><div className="numero_container">Eliminar</div></li>
+                    <li><div className="numero_container" onClick={borrar} >Eliminar</div></li>
                     <li> 
                         <div className="numero_container">
                             <button onClick={restar}>-</button>

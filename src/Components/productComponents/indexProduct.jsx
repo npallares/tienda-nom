@@ -10,11 +10,12 @@ export const Detail = ({img,title,price,id,stock}) => {
   const {cart, addToCart, corroborateStock,itemsQuantity} = useContext(CartContext)
 
   const setNewStock =()=>{
-    const newQuantity = cart.find(el=>el.id===id)
-    if(newQuantity){
-      const quantity = newQuantity.stock
-      setNumber(quantity)
-    }
+      const newQuantity = cart.find(el=>el.id===id)
+      if(newQuantity){
+        const quantity = newQuantity.stock
+        setNumber(quantity)
+      }
+    
   }
   
   

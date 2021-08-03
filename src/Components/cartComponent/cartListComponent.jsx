@@ -7,23 +7,22 @@ import { CartDetailList } from "./cartDetailList";
 export const CartListComponent = () =>{
 
 
-    const {cart, setCart, setCartQuantity ,createOrder} = useContext(CartContext)
+    const {cart, setCart, setCartQuantity ,createOrder, eliminar} = useContext(CartContext)
 
     const [lista, setLista] = useState([])
 
     const [email, setEmail]= useState(``)
     const [phone, setPhone]= useState(``)
     const [name, setName]= useState(``)
+    
+    
 
-    
-    
-    const reset = () =>{
-        setCart([])
+   /*  const reset = () =>{
+        setCart([{}])
         setLista([])
         setCartQuantity(0)
         window.localStorage.removeItem("lista")
-        window.localStorage.removeItem("product")
-    }
+    } */
 
     const setLocalStorage = (value) =>{
    
@@ -35,16 +34,16 @@ export const CartListComponent = () =>{
         if(cart){
             if(cart.length > 0){
                 setLista(cart)
-                console.log("HOLA")
-                console.log(cart)
+               // console.log("HOLAAAAA")
+                //console.log(cart)
                 setLocalStorage(JSON.stringify(cart))
             } else {
                 setCart(JSON.parse(window.localStorage.getItem(`lista`)))
-                console.log("CHAU")
+                // console.log("CHAU")
                 setLista(cart)
             }
         } else if(!cart) {
-            setCart([])
+            console.log("JIJI")
             setLista([])
         }
 
@@ -62,16 +61,27 @@ export const CartListComponent = () =>{
                     })
                 }
 
-                <button className ="btn" onClick={reset}>Reset Cart</button>
+                {/* <button className ="btn">Reset Cart</button> */}
             </div>
-            <div>
-                <input type="email" onInput={(e)=>{setEmail(e.target.value)}} placeholder="Email" />
-                <input type="tel" onInput={(e)=>{setPhone(e.target.value)}} placeholder="Tel." />
-                <input type="text" onInput={(e)=>{setName(e.target.value)}} placeholder="Nombre" />
+            <div class="container_input_all">
+                <div className="desc_container" id="desc_container">Para finalizar su compra complete los siguientes campos</div>
+                <div className="container_input" id="container_input">
+                    <input className="desc_input" type="text" onInput={(e)=>{setName(e.target.value)}} placeholder="Nombre" />
+                    <input className="desc_input" type="tel" onInput={(e)=>{setPhone(e.target.value)}} placeholder="Teléfono" />
+                    <input className="desc_input" type="email" onInput={(e)=>{setEmail(e.target.value)}} placeholder="Email" />
+                    <button class="btn_enviar" onClick={()=>{
+                        createOrder(name,phone,email);
+                        const $finish = document.getElementById("finish_container")
+                        const $desc = document.getElementById("desc_container") 
+                        const $containerInput = document.getElementById("container_input")
+                        
+                        $finish.classList.remove("disp_none")
+                        $desc.classList.add("disp_none")
+                        $containerInput.classList.add("disp_none")
+                    }}>Enviar</button>
+                </div>
+                <div className="finish_container disp_none" id="finish_container">Su compra está siendo procesada, ¡Muchas gracias!</div>
             </div>
-                <button onClick={()=>{
-                    createOrder(name,phone,email)
-                }}>Enviar</button>
             
         </div>
     )

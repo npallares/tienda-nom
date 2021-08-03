@@ -20,6 +20,23 @@
     /* border:1px solid red; */
 }
 
+.container_input_all{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 1px 1px 19px 2px #c4c4c4;
+    background-color: white;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    min-width: 700px;
+    /* border:1px solid red; */
+}
+
+
 .container_cart{
     position:relative;
     display: flex;
@@ -28,6 +45,17 @@
     width: 100%;
     
     margin-top: 1rem;
+    /* border:1px solid green; */
+}
+
+.container_input{
+    position:relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 5rem;
+    margin-top: .3rem;
     /* border:1px solid green; */
 }
 
@@ -48,10 +76,6 @@
     padding: 0;
 }
 
-.containerBoxCart ul li{
-    /* border: 1px solid blue; */
-}
-
 .containerBoxCart img{
     height:70px;
     width: auto;
@@ -66,6 +90,40 @@
     /* border:1px solid blue; */
     margin: 0 1rem;
     color: rgb(94, 94, 94);
+}
+
+.desc_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+    font-size: 1.2rem;
+    font-weight: 400;
+    /* border:1px solid rgb(255, 145, 0); */
+    margin: 0 .5rem;
+    color: rgb(113, 114, 218);
+}
+.finish_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+    font-size: 1.2rem;
+    font-weight: 800;
+    /* border:1px solid rgb(255, 145, 0); */
+    margin: 0.5rem .5rem;
+    color: rgb(113, 114, 218);
+}
+
+.desc_input{
+    border: 1px solid rgb(113, 114, 218);
+    margin: 0 0.3rem;
+    height: 1.3rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    color: rgb(53, 53, 53);
 }
 
 .numero_container{
@@ -145,4 +203,24 @@
     background-color: rgb(91, 93, 216);
     color: white;
     cursor: pointer;
+}
+.btn_enviar{
+    height: 1.8rem;
+    width: 6rem;
+    border: 1px solid rgb(113, 114, 218);
+    background-color: none;
+    color: rgb(91, 93, 216);
+    border-radius: 10px;
+    margin: 0.5rem;
+    cursor: pointer;
+}
+
+.btn_enviar:hover{
+    background-color: rgb(91, 93, 216);
+    color: white;
+    cursor: pointer;
+}
+
+.disp_none{
+    display:none
 }

@@ -31,7 +31,7 @@ export const CartComponentContext = ({children}) =>{
         if(itemInCart){
             const newCart = cart.map(el=>{
                 if(el.id === item.id && el.stock >= corroborate.stock){     // comprobación de cantidad menor al stock                   
-                    return {...el,stock:el.stock}          // seteo de item con cantidad maxima : stock     
+                    return {...el,stock:el.stock}  // seteo de item con cantidad maxima : stock     
                 }else if(el.id === item.id){  
                     if(el.stock>corroborate.stock){                        
                         return {...el,stock:corroborate.stock}
@@ -59,7 +59,7 @@ export const CartComponentContext = ({children}) =>{
         if(cart){
         const finalPrice = cart.reduce((acc,el)=>acc + el.price*el.stock,0);
         setTotal(finalPrice);
-        console.log(finalPrice);
+        //console.log(finalPrice);
         }
     }
 
@@ -155,11 +155,31 @@ export const CartComponentContext = ({children}) =>{
         db.collection("orders").add(order).then(({id}) =>{console.log(id)});
     }
 
+    // Eliminar item
+
+    const eliminar =(item)=>{
+        if(cart.length>1){
+            const newCart = cart.filter(el=> el.id != item.id)
+            setCart(newCart)
+            const newCartIconNumber = newCart.reduce((acc,el)=> acc + el.stock,0)
+            console.log(newCartIconNumber)
+            
+            setCartQuantity(newCartIconNumber)
+        } else {
+            setCart([])
+            // window.localStorage.removeItem("lista")
+            window.localStorage.setItem("lista", JSON.stringify([]))
+            console.log("chau")
+            console.log(cart)
+            setCartQuantity(0)
+        }
+    }
+
     useEffect(() => {
         getTotal()
     }, [cart])
    
-    return <CartContext.Provider value={{cart, setCart, addToCart, corroborateStock,itemsQuantity,cartQuantity,setCartQuantity,newQuantityShopSuma,newQuantityShopResta,total,createOrder}}>
+    return <CartContext.Provider value={{cart, setCart, addToCart, corroborateStock,itemsQuantity,cartQuantity,setCartQuantity,newQuantityShopSuma,newQuantityShopResta,total,createOrder, eliminar}}>
         {children}
     </CartContext.Provider>
 
