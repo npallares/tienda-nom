@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 
 export const CartDetailList = ({img,title,price,stock,id}) =>{
 
-    const {newQuantityShopSuma, newQuantityShopResta, cart} = useContext(CartContext)
+    const {newQuantityShopSuma, newQuantityShopResta} = useContext(CartContext)
 
    const sumar =()=>{
     newQuantityShopSuma(stock,id)

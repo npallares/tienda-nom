@@ -1,4 +1,4 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
 
 
 import { Detail } from "../Components/productComponents/indexProduct";
@@ -11,6 +11,7 @@ export const CartComponentContext = ({children}) =>{
     const [cart, setCart]= useState([])
     const [cartQuantity, setCartQuantity]= useState([])
     const [corroborate,setCorroborate] = useState(0)
+    const [total, setTotal] = useState(0)
     const [quantityShop,setQuantityShop] = useState(0)
 
     const estadoGlobal = useContext(ShopContext);
@@ -48,6 +49,12 @@ export const CartComponentContext = ({children}) =>{
         }else{
             setCart([...cart,item])
         }         
+    }
+
+    const getTotal = () =>{
+        const finalPrice = cart.reduce((acc,el)=>acc + el.price*el.stock,0);
+        setTotal(finalPrice);
+        console.log(finalPrice);
     }
 
 
@@ -96,8 +103,8 @@ export const CartComponentContext = ({children}) =>{
             setCartQuantity(newCartIconNumber)
         }
 
-        console.log(estadoGlobal)
-        console.log(maxAux.stock)
+        //console.log(estadoGlobal)
+        //console.log(maxAux.stock)
 
     }
 
@@ -134,8 +141,12 @@ export const CartComponentContext = ({children}) =>{
         }
 
     }
+
+    useEffect(() => {
+        getTotal()
+    }, [cart])
    
-    return <CartContext.Provider value={{cart, setCart, addToCart, corroborateStock,itemsQuantity,cartQuantity,setCartQuantity,newQuantityShopSuma,newQuantityShopResta}}>
+    return <CartContext.Provider value={{cart, setCart, addToCart, corroborateStock,itemsQuantity,cartQuantity,setCartQuantity,newQuantityShopSuma,newQuantityShopResta,total}}>
         {children}
     </CartContext.Provider>
 
