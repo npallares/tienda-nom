@@ -56,9 +56,11 @@ export const CartComponentContext = ({children}) =>{
     // Obtener Importe Total de compra
 
     const getTotal = () =>{
+        if(cart){
         const finalPrice = cart.reduce((acc,el)=>acc + el.price*el.stock,0);
         setTotal(finalPrice);
         console.log(finalPrice);
+        }
     }
 
 
