@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./style.css";
 import { useContext } from "react";
 import { CartContext } from "../../context/cartContext";
-import { Link } from "react-router-dom"
 
 export const CartDetailList = ({img,title,price,stock,id}) =>{
 
@@ -12,12 +11,13 @@ export const CartDetailList = ({img,title,price,stock,id}) =>{
         eliminar({img,title,price,stock,id})
     }
     
-   const sumar =()=>{
+    const sumar =()=>{
     newQuantityShopSuma(stock,id)
-   }
-   const restar =()=>{
+    }
+
+    const restar =()=>{
     newQuantityShopResta(stock,id)
-   }
+    }
 
     return(
        

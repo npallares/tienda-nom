@@ -11,15 +11,12 @@ import { ShopContext } from "../../context/shopContext";
 export const ItemDetailContainer = () =>{
     
     const estadoGlobal = useContext(ShopContext);
-    
-    /* console.log(cartGlobal.info) */
 
     const [item, setItem] = useState();
     const [loading, setLoading] = useState(true);
     const {productoId} = useParams();    
 
-    const setLocalStorage = (value) =>{
-        
+    const setLocalStorage = (value) =>{  
         window.localStorage.setItem("product", value)
     }
 
@@ -34,9 +31,7 @@ export const ItemDetailContainer = () =>{
                 setLocalStorage(JSON.stringify(filtrado))
             } else {
                 setItem(JSON.parse(window.localStorage.getItem(`product`)))
-            }
-
-               
+            }    
 
     },[productoId])
     

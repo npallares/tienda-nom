@@ -8,16 +8,11 @@ import { ShopContext } from "../../context/shopContext";
 export const ItemListContainerNike = () =>{
     const estadoGlobal = useContext(ShopContext);
     const[nike, setNike] = useState([]);
-        
-    
-    
-    
     
     useEffect(()=>{
         async function getNike(){
             const nikeProducts = estadoGlobal.filter(el=>el.marca === "nike")
-            setNike(nikeProducts)   
-            console.log(nikeProducts)
+            setNike(nikeProducts)
         }
         getNike()
     },[])  

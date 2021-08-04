@@ -1,8 +1,5 @@
 import { createContext, useState, useContext, useEffect } from "react";
 import { getFirestore } from "../client/client";
-
-
-import { Detail } from "../Components/productComponents/indexProduct";
 import { ShopContext } from "../context/shopContext";
 
 export const CartContext = createContext();
@@ -13,21 +10,17 @@ export const CartComponentContext = ({children}) =>{
     const [cartQuantity, setCartQuantity]= useState([])
     const [corroborate,setCorroborate] = useState(0)
     const [total, setTotal] = useState(0)
-    const [quantityShop,setQuantityShop] = useState(0)
-
     const estadoGlobal = useContext(ShopContext);
 
+    /// Seteo de varaible para corroboración de stock
     const corroborateStock =(item)=>{
         const corroborate = estadoGlobal.find(el=>el.id === item.id)
         setCorroborate(corroborate)
     }
 
     // Seteo de agregado al carrito
-
     const addToCart =(item)=>{
-
         const itemInCart = cart.find(el=>(el.id === item.id))
-        
         if(itemInCart){
             const newCart = cart.map(el=>{
                 if(el.id === item.id && el.stock >= corroborate.stock){     // comprobación de cantidad menor al stock                   
@@ -37,8 +30,7 @@ export const CartComponentContext = ({children}) =>{
                         return {...el,stock:corroborate.stock}
                     }else{
                         const suma = el.stock + item.stock
-                        if(suma > el.stock && suma > corroborate.stock){                                
-                            
+                        if(suma > el.stock && suma > corroborate.stock){
                                 return{...el,stock:el.stock}
                             }                            
                          return {...el,stock:suma}
@@ -54,18 +46,15 @@ export const CartComponentContext = ({children}) =>{
     }
 
     // Obtener Importe Total de compra
-
     const getTotal = () =>{
         if(cart){
         const finalPrice = cart.reduce((acc,el)=>acc + el.price*el.stock,0);
         setTotal(finalPrice);
-        //console.log(finalPrice);
         }
     }
 
 
     // Seteo del numero referente al icono cart
-
     const itemsQuantity=(itemQunatity)=>{
         const findItem = cart.find(el=>el.id === itemQunatity.id)
         if(findItem && findItem.stock + itemQunatity.number > itemQunatity.stock){
@@ -79,19 +68,12 @@ export const CartComponentContext = ({children}) =>{
 
 
     // Seteo de cantidad, al sumar el stock del productos 
-
     const newQuantityShopSuma =(number,id)=>{
-        
         const newNumber = number+1
-
         const maxAux = estadoGlobal.find(el=>el.id === id)
-
         if(newNumber>=maxAux.stock+1){
-            
         }else{
-
             const aux = cart.find(el=>el.id === id)
-
             const newStockCart = cart.map(el=>{
                 if(el === aux){
                     return{...el,stock:newNumber}
@@ -99,31 +81,21 @@ export const CartComponentContext = ({children}) =>{
                     return(el)
                 }
             })
-
             setCart(newStockCart)
 
             // seteo de icono chango
-
-            const newCartIconNumber = cart.reduce((acc,el)=> acc + el.stock,1)
-            console.log(newCartIconNumber)
-            
+            const newCartIconNumber = cart.reduce((acc,el)=> acc + el.stock,1)    
             setCartQuantity(newCartIconNumber)
         }
     }
 
 
     // Seteo de cantidad, al restar el stock del productos 
-
     const newQuantityShopResta =(number,id)=>{
-        
         const newNumber = number-1
-
         if(newNumber<0){
-            
         }else{
-
             const aux = cart.find(el=>el.id === id)
-
             const newStockCart = cart.map(el=>{
                 if(el === aux){
                     return{...el,stock:newNumber}
@@ -131,13 +103,10 @@ export const CartComponentContext = ({children}) =>{
                     return(el)
                 }
             })
-
             setCart(newStockCart)
 
             // seteo de icono chango
-
             const newCartIconNumber = cart.reduce((acc,el)=> acc - el.stock,1)
-            console.log(newCartIconNumber)
             
             const posNum = (newCartIconNumber < 0) ? newCartIconNumber * -1 : newCartIconNumber;
 
@@ -147,7 +116,6 @@ export const CartComponentContext = ({children}) =>{
     }
 
     // Crear orden de compra y pasaje parametros a firebase
-
     const createOrder = (name,phone,email) =>{
         const order = {buyer:{name,phone,email}, item:cart, finalAmount:total}
         console.log(order)
@@ -156,21 +124,15 @@ export const CartComponentContext = ({children}) =>{
     }
 
     // Eliminar item
-
     const eliminar =(item)=>{
         if(cart.length>1){
             const newCart = cart.filter(el=> el.id != item.id)
             setCart(newCart)
-            const newCartIconNumber = newCart.reduce((acc,el)=> acc + el.stock,0)
-            console.log(newCartIconNumber)
-            
+            const newCartIconNumber = newCart.reduce((acc,el)=> acc + el.stock,0)            
             setCartQuantity(newCartIconNumber)
         } else {
             setCart([])
-            // window.localStorage.removeItem("lista")
             window.localStorage.setItem("lista", JSON.stringify([]))
-            console.log("chau")
-            console.log(cart)
             setCartQuantity(0)
         }
     }

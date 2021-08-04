@@ -8,16 +8,11 @@ import { ShopContext } from "../../context/shopContext";
 export const ItemListContainerRemeras = () =>{
     const estadoGlobal = useContext(ShopContext);
     const[remeras, setRemeras] = useState([]);
-        
-    
-    
-    
-    
+  
     useEffect(()=>{
         async function getRemeras(){
             const remerasProducts = estadoGlobal.filter(el=>el.categoria === "remeras")
-            setRemeras(remerasProducts)   
-            console.log(remerasProducts)
+            setRemeras(remerasProducts)
         }
         getRemeras()
     },[])  

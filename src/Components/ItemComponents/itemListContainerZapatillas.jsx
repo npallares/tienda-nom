@@ -8,16 +8,11 @@ import { ShopContext } from "../../context/shopContext";
 export const ItemListContainerZapatillas = () =>{
     const estadoGlobal = useContext(ShopContext);
     const[zapatillas, setZapatillas] = useState([]);
-        
-    
-    
-    
-    
+  
     useEffect(()=>{
         async function getZapatillas(){
             const zapatillasProducts = estadoGlobal.filter(el=>el.categoria === "zapatillas")
-            setZapatillas(zapatillasProducts)   
-            console.log(zapatillasProducts)
+            setZapatillas(zapatillasProducts) 
         }
         getZapatillas()
     },[])  

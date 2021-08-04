@@ -7,21 +7,20 @@ import { CartContext } from "../../context/cartContext";
 export const ListModule = () =>{
 
     const {cartQuantity} = useContext(CartContext)
-    /* console.log(cartQuantity) */
 
     useEffect(() => {
-        const setSpan=()=>{
 
+        // seteo de span ref. al numero del cart
+        const setSpan=()=>{
             const $span = document.getElementById("itemQuantity")
-            console.log($span.classList)
             if(cartQuantity > 0){
                 $span.classList.remove("none")
             } else {
                 $span.classList.add("none")
             }    
-
         }
         setSpan()
+
     }, [cartQuantity])
 
     return(

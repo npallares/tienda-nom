@@ -18,41 +18,27 @@ export const Detail = ({img,title,price,id,stock}) => {
     
   }
   
-  
   const agregar=()=>{
-      addToCart({
-        id,price,title,img,stock:number
-      })
-
+    addToCart({id,price,title,img,stock:number})
       corroborateStock({id,stock})
-
       itemsQuantity({number,id,stock})
-
-      
       alert("Agregaste este producto al carrito")
   }
 
   const aumentar = () => {
     if (number < stock) {
-      console.log("Click Aumentar");
       setNumber(number + 1);
-      
-      
     }else{alert("No se admite cantidad mayor al stock")}
   };
 
   const reducir = () => {
     if (number > 0) {
-      console.log("Click Reducir");
       setNumber(number- 1);
-      
-      
     } else{alert("No se admite cantidad negativa - ")}
   };
   
   useEffect(()=>{
     setNewStock();
-
   },[])
     
   return (

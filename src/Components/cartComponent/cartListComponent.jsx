@@ -7,7 +7,7 @@ import { CartDetailList } from "./cartDetailList";
 export const CartListComponent = () =>{
 
 
-    const {cart, setCart, setCartQuantity ,createOrder, eliminar} = useContext(CartContext)
+    const {cart, setCart, createOrder} = useContext(CartContext)
 
     const [lista, setLista] = useState([])
 
@@ -15,35 +15,24 @@ export const CartListComponent = () =>{
     const [phone, setPhone]= useState(``)
     const [name, setName]= useState(``)
     
-    
-
-   /*  const reset = () =>{
-        setCart([{}])
-        setLista([])
-        setCartQuantity(0)
-        window.localStorage.removeItem("lista")
-    } */
 
     const setLocalStorage = (value) =>{
-   
         window.localStorage.setItem("lista", value)
     }
 
     
     useEffect(() => {
+
+        //Comprobacion para local storage
         if(cart){
             if(cart.length > 0){
                 setLista(cart)
-               // console.log("HOLAAAAA")
-                //console.log(cart)
                 setLocalStorage(JSON.stringify(cart))
             } else {
                 setCart(JSON.parse(window.localStorage.getItem(`lista`)))
-                // console.log("CHAU")
                 setLista(cart)
             }
         } else if(!cart) {
-            console.log("JIJI")
             setLista([])
         }
 
