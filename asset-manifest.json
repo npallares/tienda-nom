@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/tienda-nom/static/css/main.92e24fdc.chunk.css",
-    "main.js": "/tienda-nom/static/js/main.b56c8770.chunk.js",
-    "main.js.map": "/tienda-nom/static/js/main.b56c8770.chunk.js.map",
-    "runtime-main.js": "/tienda-nom/static/js/runtime-main.ad1e80f2.js",
-    "runtime-main.js.map": "/tienda-nom/static/js/runtime-main.ad1e80f2.js.map",
-    "static/js/2.84c1090d.chunk.js": "/tienda-nom/static/js/2.84c1090d.chunk.js",
-    "static/js/2.84c1090d.chunk.js.map": "/tienda-nom/static/js/2.84c1090d.chunk.js.map",
-    "static/js/3.770bb05e.chunk.js": "/tienda-nom/static/js/3.770bb05e.chunk.js",
-    "static/js/3.770bb05e.chunk.js.map": "/tienda-nom/static/js/3.770bb05e.chunk.js.map",
-    "index.html": "/tienda-nom/index.html",
-    "static/css/main.92e24fdc.chunk.css.map": "/tienda-nom/static/css/main.92e24fdc.chunk.css.map",
-    "static/js/2.84c1090d.chunk.js.LICENSE.txt": "/tienda-nom/static/js/2.84c1090d.chunk.js.LICENSE.txt",
-    "static/media/chango.f2b130e8.png": "/tienda-nom/static/media/chango.f2b130e8.png",
-    "static/media/menu.6ea28911.png": "/tienda-nom/static/media/menu.6ea28911.png"
+    "main.css": "/tienda-npallares/static/css/main.92e24fdc.chunk.css",
+    "main.js": "/tienda-npallares/static/js/main.b56c8770.chunk.js",
+    "main.js.map": "/tienda-npallares/static/js/main.b56c8770.chunk.js.map",
+    "runtime-main.js": "/tienda-npallares/static/js/runtime-main.605ed9bc.js",
+    "runtime-main.js.map": "/tienda-npallares/static/js/runtime-main.605ed9bc.js.map",
+    "static/js/2.e1cb9b19.chunk.js": "/tienda-npallares/static/js/2.e1cb9b19.chunk.js",
+    "static/js/2.e1cb9b19.chunk.js.map": "/tienda-npallares/static/js/2.e1cb9b19.chunk.js.map",
+    "static/js/3.770bb05e.chunk.js": "/tienda-npallares/static/js/3.770bb05e.chunk.js",
+    "static/js/3.770bb05e.chunk.js.map": "/tienda-npallares/static/js/3.770bb05e.chunk.js.map",
+    "index.html": "/tienda-npallares/index.html",
+    "static/css/main.92e24fdc.chunk.css.map": "/tienda-npallares/static/css/main.92e24fdc.chunk.css.map",
+    "static/js/2.e1cb9b19.chunk.js.LICENSE.txt": "/tienda-npallares/static/js/2.e1cb9b19.chunk.js.LICENSE.txt",
+    "static/media/chango.f2b130e8.png": "/tienda-npallares/static/media/chango.f2b130e8.png",
+    "static/media/menu.6ea28911.png": "/tienda-npallares/static/media/menu.6ea28911.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.ad1e80f2.js",
-    "static/js/2.84c1090d.chunk.js",
+    "static/js/runtime-main.605ed9bc.js",
+    "static/js/2.e1cb9b19.chunk.js",
     "static/css/main.92e24fdc.chunk.css",
     "static/js/main.b56c8770.chunk.js"
   ]
