@@ -26,19 +26,19 @@ function App() {
           <BrowserRouter basename = "/tienda-nom">
             <Navbar/>
             <Switch>
-              {/* <Route exact path="/" component={ItemListContainer}/>
-              <Route path="/login/" component={LoginButton}/> */}
-              <Route path="/logout/" component={LogoutButton}/>
-              <Route path="/tienda-nom/" component={ItemListContainer}/>
-              <Route path="/remeras/" component={ItemListContainerRemeras}/>
-              <Route path="/buzos/" component={ItemListContainerBuzos}/>
-              <Route path="/zapatillas/" component={ItemListContainerZapatillas}/>
-              <Route path="/topper/" component={ItemListContainerTopper}/>
-              <Route path="/nike/" component={ItemListContainerNike}/>
-              <Route path="/adidas/" component={ItemListContainerAdidas}/>
-              <Route path="/cart/" component={CartListComponent}/>
-              <Route path="/producto/:productoId/" component={ItemDetailContainer}/>
-              <Route path="*" component={()=> <h1 className="red">404</h1>}/>
+              <Route exact path="/" component={ItemListContainer}/>
+              {/* <Route path="/login/" component={LoginButton}/> */}
+              {/* <Route path="/logout/" component={LogoutButton}/> */}
+              <Route path="/tienda-nom" component={ItemListContainer}/>
+              <Route path="/remeras" component={ItemListContainerRemeras}/>
+              <Route path="/buzos" component={ItemListContainerBuzos}/>
+              <Route path="/zapatillas" component={ItemListContainerZapatillas}/>
+              <Route path="/topper" component={ItemListContainerTopper}/>
+              <Route path="/nike" component={ItemListContainerNike}/>
+              <Route path="/adidas" component={ItemListContainerAdidas}/>
+              <Route path="/cart" component={CartListComponent}/>
+              <Route path="/producto/:productoId" component={ItemDetailContainer}/>
+              {/* <Route path="*" component={()=> <h1 className="red">404</h1>}/> */}
             </Switch>
           </BrowserRouter>
         </CartComponentContext>
