@@ -3,6 +3,8 @@ import chango from "./assets/chango.png"
 import { Link } from "react-router-dom"
 import { useContext,  useEffect, } from "react";
 import { CartContext } from "../../context/cartContext";
+import { LoginButton } from "../loginComponents/LoginButton";
+import { LogoutButton } from "../loginComponents/LogoutButton";
 
 export const ListModule = () =>{
 
@@ -34,7 +36,11 @@ export const ListModule = () =>{
                 <Link to={`/topper`}><li>Topper</li></Link>
                 <Link to={`/zapatillas`}><li>Zapatillas </li></Link>
                 <Link to={`/buzos`}><li>Buzos</li></Link>
-                <Link to={`/remeras`}><li>Remeras</li></Link>
+                <Link to={`/remeras`}><li>Remera</li></Link>
+                {/* <Link to={`/login`}><LoginButton/></Link>
+                {LoginButton ? <h5>Login</h5> : <h5>Logout</h5>}
+                <Link to={`/logout`}><LogoutButton/></Link> */}
+                
                 <Link to={`/cart`}><li><img src={chango} className="chango" /><span className="itemQuantity none" id="itemQuantity">{cartQuantity}</span></li></Link>
             </ul>
         </>
