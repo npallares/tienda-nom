@@ -23,7 +23,7 @@ function App() {
   return (  
     <ShopComponentContext>
         <CartComponentContext>
-          <BrowserRouter>
+          <BrowserRouter basename = "/tienda-nom">
             <Navbar/>
             <Switch>
               {/* <Route exact path="/" component={ItemListContainer}/>
