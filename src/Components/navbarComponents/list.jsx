@@ -34,9 +34,9 @@ export const ListModule = () =>{
                 <Link to={`/nike`}><li>Nike</li></Link>
                 <Link to={`/adidas`}><li>Adidas</li></Link>
                 <Link to={`/topper`}><li>Topper</li></Link>
-                <Link to={`/zapatillas`}><li>Zapatilla </li></Link>
-                <Link to={`/buzos`}><li>Buzo</li></Link>
-                <Link to={`/remeras`}><li>Remera</li></Link>
+                <Link to={`/zapatillas`}><li>Zapatillas</li></Link>
+                <Link to={`/buzos`}><li>Buzos</li></Link>
+                <Link to={`/remeras`}><li>Remeras</li></Link>
                 {/* <Link to={`/login`}><LoginButton/></Link>
                 {LoginButton ? <h5>Login</h5> : <h5>Logout</h5>}
                 <Link to={`/logout`}><LogoutButton/></Link> */}
