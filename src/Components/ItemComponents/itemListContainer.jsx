@@ -18,7 +18,7 @@ export const ItemListContainer = () =>{
         <div className="mlContainer">
             {estadoGlobal.map(el=>{
                 return(
-                    <Card {...el}/>
+                    <Card key={el.id} {...el}/>
                 )
             })}
         </div>

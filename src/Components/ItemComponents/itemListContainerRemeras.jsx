@@ -6,12 +6,15 @@ import { ShopContext } from "../../context/shopContext";
 
 
 export const ItemListContainerRemeras = () =>{
-    const estadoGlobal = useContext(ShopContext);
+    
     const[remeras, setRemeras] = useState([]);
   
     useEffect(()=>{
+
+        const localStore=(JSON.parse(window.localStorage.getItem(`store`)))
+
         async function getRemeras(){
-            const remerasProducts = estadoGlobal.filter(el=>el.categoria === "remeras")
+            const remerasProducts = localStore.filter(el=>el.categoria === "remeras")
             setRemeras(remerasProducts)
         }
         getRemeras()
@@ -21,7 +24,7 @@ export const ItemListContainerRemeras = () =>{
             <div className="mlContainer">
                 {remeras.map(el=>{
                     return(
-                        <Card {...el}/>
+                        <Card key={el.id} {...el}/>
                     )
                 })}
             </div>

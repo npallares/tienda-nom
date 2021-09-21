@@ -6,12 +6,15 @@ import { ShopContext } from "../../context/shopContext";
 
 
 export const ItemListContainerNike = () =>{
-    const estadoGlobal = useContext(ShopContext);
+    
     const[nike, setNike] = useState([]);
     
     useEffect(()=>{
+
+        const localStore=(JSON.parse(window.localStorage.getItem(`store`)))
+
         async function getNike(){
-            const nikeProducts = estadoGlobal.filter(el=>el.marca === "nike")
+            const nikeProducts = localStore.filter(el=>el.marca === "nike")
             setNike(nikeProducts)
         }
         getNike()
@@ -21,7 +24,7 @@ export const ItemListContainerNike = () =>{
             <div className="mlContainer">
                 {nike.map(el=>{
                     return(
-                        <Card {...el}/>
+                        <Card key={el.id} {...el}/>
                     )
                 })}
             </div>

@@ -6,12 +6,15 @@ import { ShopContext } from "../../context/shopContext";
 
 
 export const ItemListContainerBuzos = () =>{
-    const estadoGlobal = useContext(ShopContext);
+    
     const[buzos, setBuzos] = useState([]);
    
     useEffect(()=>{
+
+        const localStore=(JSON.parse(window.localStorage.getItem(`store`)))
+
         async function getBuzos(){
-            const buzosProducts = estadoGlobal.filter(el=>el.categoria === "buzos")
+            const buzosProducts = localStore.filter(el=>el.categoria === "buzos")
             setBuzos(buzosProducts)
         }
         getBuzos()
@@ -21,7 +24,7 @@ export const ItemListContainerBuzos = () =>{
             <div className="mlContainer">
                 {buzos.map(el=>{
                     return(
-                        <Card {...el}/>
+                        <Card key={el.id} {...el}/>
                     )
                 })}
             </div>

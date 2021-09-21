@@ -6,12 +6,15 @@ import { ShopContext } from "../../context/shopContext";
 
 
 export const ItemListContainerTopper = () =>{
-    const estadoGlobal = useContext(ShopContext);
+    
     const[topper, setTopper] = useState([]);
      
     useEffect(()=>{
+
+        const localStore=(JSON.parse(window.localStorage.getItem(`store`)))
+
         async function getTopper(){
-            const topperProducts = estadoGlobal.filter(el=>el.marca === "topper")
+            const topperProducts = localStore.filter(el=>el.marca === "topper")
             setTopper(topperProducts)
         }
         getTopper()
@@ -21,7 +24,7 @@ export const ItemListContainerTopper = () =>{
             <div className="mlContainer">
                 {topper.map(el=>{
                     return(
-                        <Card {...el}/>
+                        <Card key={el.id} {...el}/>
                     )
                 })}
             </div>
