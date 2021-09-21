@@ -2,7 +2,7 @@
   "name": "tienda-npallares",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://npallares.github.io/tienda-nom",
+  "homepage": "https://npallares.github.io/tienda-npallares",
   "dependencies": {
     "@auth0/auth0-react": "^1.8.0",
     "@testing-library/jest-dom": "^5.13.0",
