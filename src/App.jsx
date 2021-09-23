@@ -29,7 +29,7 @@ function App() {
               <Route exact path="/" component={ItemListContainer}/>
               {/* <Route path="/login/" component={LoginButton}/> */}
               {/* <Route path="/logout/" component={LogoutButton}/> */}
-              <Route path="/tienda-nom" component={ItemListContainer}/>
+              <Route path="/tienda-nom/" component={ItemListContainer}/>
               <Route path="/remeras" component={ItemListContainerRemeras}/>
               <Route path="/buzos" component={ItemListContainerBuzos}/>
               <Route path="/zapatillas" component={ItemListContainerZapatillas}/>
