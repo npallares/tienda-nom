@@ -39,13 +39,14 @@ export const Detail = ({img,title,price,id,stock}) => {
   
   useEffect(()=>{
     setNewStock();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
     
   return (
     <>
       <div className="container_product">
         <div className="container_img">
-          <img src={img} alt="" />
+          <img src={img} srcSet={``} alt="" />
         </div>  
         <div className="info_container_product">
           <h1 className="title_product">{title}</h1>

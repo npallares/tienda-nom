@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import "./navbar.css"
-import { BrowserRouter as Router, Link} from 'react-router-dom';
+import { Link } from "react-router-dom"
 
 export const LogoModule =()=>{
     return(

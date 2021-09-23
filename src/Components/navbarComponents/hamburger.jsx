@@ -4,7 +4,7 @@ export const HamburgerModule =()=>{
     return(
         <>
             <div className="onlyresponsive">
-               <div><img src={menu} className="menu" /></div>
+               <div><img src={menu} className="menu" alt="hamburger" /></div>
             </div>
         </>
     )

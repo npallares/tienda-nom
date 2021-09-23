@@ -23,7 +23,7 @@ export const ItemDetailContainer = () =>{
     useEffect(()=>{
         
             document.title="Tienda Nom"
-                let filtrado = estadoGlobal.filter(el=> `:${el.id}` == productoId)
+                let filtrado = estadoGlobal.filter(el=> `:${el.id}` === productoId)
                 setItem(filtrado);
                 setLoading(false)
 
@@ -32,8 +32,8 @@ export const ItemDetailContainer = () =>{
             } else {
                 setItem(JSON.parse(window.localStorage.getItem(`product`)))
             }    
-
-    },[productoId])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
     
     if(loading) return <h3>Loading</h3>
 

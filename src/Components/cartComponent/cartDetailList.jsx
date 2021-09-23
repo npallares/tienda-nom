@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./style.css";
 import { useContext } from "react";
 import { CartContext } from "../../context/cartContext";
@@ -23,7 +23,7 @@ export const CartDetailList = ({img,title,price,stock,id}) =>{
        
             <div className="containerBoxCart">
                 <ul>
-                    <li><div><img src={img} alt="" srcset="" /></div></li>
+                    <li><div><img src={img}  alt="" srcSet={``} /></div></li>
                     <li><div className="title_container">{title}</div></li>
                     <li><div className="numero_container" onClick={borrar} >Eliminar</div></li>
                     <li> 

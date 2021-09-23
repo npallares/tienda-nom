@@ -7,7 +7,7 @@ import { CartDetailList } from "./cartDetailList";
 export const CartListComponent = () =>{
 
 
-    const {cart, setCart, createOrder} = useContext(CartContext)
+    const {cart, createOrder} = useContext(CartContext)
 
     const [lista, setLista] = useState([])
 
@@ -29,8 +29,8 @@ export const CartListComponent = () =>{
                 setLista(cart)
                 setLocalStorage(JSON.stringify(cart))
             } else {
-                setCart(JSON.parse(window.localStorage.getItem(`lista`)))
-                setLista(cart)
+                setLista(JSON.parse(window.localStorage.getItem(`lista`)))
+                //console.log(cart.length)
             }
         } else if(!cart) {
             setLista([])
@@ -43,7 +43,7 @@ export const CartListComponent = () =>{
             <div className="container_cart_all">
                 {lista.map(el=>{
                     return(
-                        <div className="container_cart">
+                        <div key={el.id} className="container_cart">
                             <CartDetailList {...el}/>
                         </div>
                         )
@@ -52,13 +52,13 @@ export const CartListComponent = () =>{
 
                 {/* <button className ="btn">Reset Cart</button> */}
             </div>
-            <div class="container_input_all">
+            <div className="container_input_all">
                 <div className="desc_container" id="desc_container">Para finalizar su compra complete los siguientes campos</div>
                 <div className="container_input" id="container_input">
                     <input className="desc_input" type="text" onInput={(e)=>{setName(e.target.value)}} placeholder="Nombre" />
                     <input className="desc_input" type="tel" onInput={(e)=>{setPhone(e.target.value)}} placeholder="Teléfono" />
                     <input className="desc_input" type="email" onInput={(e)=>{setEmail(e.target.value)}} placeholder="Email" />
-                    <button class="btn_enviar" onClick={()=>{
+                    <button className="btn_enviar" onClick={()=>{
                         createOrder(name,phone,email);
                         const $finish = document.getElementById("finish_container")
                         const $desc = document.getElementById("desc_container") 

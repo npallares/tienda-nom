@@ -1,5 +1,5 @@
 import "./style.css";
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Card } from "../ItemComponents/card";
 import { useContext } from "react";
 import { ShopContext } from "../../context/shopContext";

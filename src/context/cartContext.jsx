@@ -4,10 +4,16 @@ import { ShopContext } from "../context/shopContext";
 
 export const CartContext = createContext();
 
+// Local list recupera del storage los elementos para setearlos como parametro de inicio de cart 
+const localList=(JSON.parse(window.localStorage.getItem(`lista`)))
+
+// LocalQuantity suma la cantidad de stock en el storage para ser usado como valor inicial de cartQuantity
+const localQuantity = localList.reduce((acc,el)=>acc+el.stock,0)
+
 export const CartComponentContext = ({children}) =>{
 
-    const [cart, setCart]= useState([])
-    const [cartQuantity, setCartQuantity]= useState([])
+    const [cart, setCart]= useState(localList)
+    const [cartQuantity, setCartQuantity]= useState(localQuantity)
     const [corroborate,setCorroborate] = useState(0)
     const [total, setTotal] = useState(0)
     const estadoGlobal = useContext(ShopContext);
@@ -21,6 +27,7 @@ export const CartComponentContext = ({children}) =>{
     // Seteo de agregado al carrito
     const addToCart =(item)=>{
         const itemInCart = cart.find(el=>(el.id === item.id))
+
         if(itemInCart){
             const newCart = cart.map(el=>{
                 if(el.id === item.id && el.stock >= corroborate.stock){     // comprobación de cantidad menor al stock                   
@@ -45,7 +52,7 @@ export const CartComponentContext = ({children}) =>{
         }         
     }
 
-    // Obtener Importe Total de compra
+    // Obtener Importe Total por item
     const getTotal = () =>{
         if(cart){
         const finalPrice = cart.reduce((acc,el)=>acc + el.price*el.stock,0);
@@ -126,7 +133,7 @@ export const CartComponentContext = ({children}) =>{
     // Eliminar item
     const eliminar =(item)=>{
         if(cart.length>1){
-            const newCart = cart.filter(el=> el.id != item.id)
+            const newCart = cart.filter(el=> el.id !== item.id)
             setCart(newCart)
             const newCartIconNumber = newCart.reduce((acc,el)=> acc + el.stock,0)            
             setCartQuantity(newCartIconNumber)
@@ -137,8 +144,12 @@ export const CartComponentContext = ({children}) =>{
         }
     }
 
+    
+
+
     useEffect(() => {
         getTotal()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [cart])
    
     return <CartContext.Provider value={{cart, setCart, addToCart, corroborateStock,itemsQuantity,cartQuantity,setCartQuantity,newQuantityShopSuma,newQuantityShopResta,total,createOrder, eliminar}}>

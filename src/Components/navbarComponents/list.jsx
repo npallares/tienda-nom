@@ -37,11 +37,12 @@ export const ListModule = () =>{
                 <Link to={`/zapatillas`}><li>Zapatillas</li></Link>
                 <Link to={`/buzos`}><li>Buzos</li></Link>
                 <Link to={`/remeras`}><li>Remeras</li></Link>
+                <Link to={`/remeras`}><li>prueba</li></Link>
                 {/* <Link to={`/login`}><LoginButton/></Link>
                 {LoginButton ? <h5>Login</h5> : <h5>Logout</h5>}
                 <Link to={`/logout`}><LogoutButton/></Link> */}
                 
-                <Link to={`/cart`}><li><img src={chango} className="chango" /><span className="itemQuantity none" id="itemQuantity">{cartQuantity}</span></li></Link>
+                <Link to={`/cart`}><li><img src={chango} className="chango" alt="chango" /><span className="itemQuantity none" id="itemQuantity">{cartQuantity}</span></li></Link>
             </ul>
         </>
     )

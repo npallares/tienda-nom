@@ -54,6 +54,7 @@ nav li:hover{
     font-family: 'Montserrat', sans-serif;
     font-size: 2rem;
     font-weight: 700;
+    cursor: pointer;
 }
 
 .logo{
