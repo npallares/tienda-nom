@@ -1,24 +1,34 @@
 {
   "files": {
-    "main.css": "/tienda-nom/static/css/main.763b243b.chunk.css",
-    "main.js": "/tienda-nom/static/js/main.99e42cec.chunk.js",
-    "main.js.map": "/tienda-nom/static/js/main.99e42cec.chunk.js.map",
-    "runtime-main.js": "/tienda-nom/static/js/runtime-main.ad1e80f2.js",
-    "runtime-main.js.map": "/tienda-nom/static/js/runtime-main.ad1e80f2.js.map",
-    "static/js/2.84c1090d.chunk.js": "/tienda-nom/static/js/2.84c1090d.chunk.js",
-    "static/js/2.84c1090d.chunk.js.map": "/tienda-nom/static/js/2.84c1090d.chunk.js.map",
-    "static/js/3.770bb05e.chunk.js": "/tienda-nom/static/js/3.770bb05e.chunk.js",
-    "static/js/3.770bb05e.chunk.js.map": "/tienda-nom/static/js/3.770bb05e.chunk.js.map",
+    "main.css": "/tienda-nom/static/css/main.4ead56ce.chunk.css",
+    "main.js": "/tienda-nom/static/js/main.58bca268.chunk.js",
+    "main.js.map": "/tienda-nom/static/js/main.58bca268.chunk.js.map",
+    "runtime-main.js": "/tienda-nom/static/js/runtime-main.61cd52e1.js",
+    "runtime-main.js.map": "/tienda-nom/static/js/runtime-main.61cd52e1.js.map",
+    "static/js/2.ee670847.chunk.js": "/tienda-nom/static/js/2.ee670847.chunk.js",
+    "static/js/2.ee670847.chunk.js.map": "/tienda-nom/static/js/2.ee670847.chunk.js.map",
+    "static/js/3.dd06ccf8.chunk.js": "/tienda-nom/static/js/3.dd06ccf8.chunk.js",
+    "static/js/3.dd06ccf8.chunk.js.map": "/tienda-nom/static/js/3.dd06ccf8.chunk.js.map",
     "index.html": "/tienda-nom/index.html",
-    "static/css/main.763b243b.chunk.css.map": "/tienda-nom/static/css/main.763b243b.chunk.css.map",
-    "static/js/2.84c1090d.chunk.js.LICENSE.txt": "/tienda-nom/static/js/2.84c1090d.chunk.js.LICENSE.txt",
+    "static/css/main.4ead56ce.chunk.css.map": "/tienda-nom/static/css/main.4ead56ce.chunk.css.map",
+    "static/js/2.ee670847.chunk.js.LICENSE.txt": "/tienda-nom/static/js/2.ee670847.chunk.js.LICENSE.txt",
+    "static/media/banners1.png": "/tienda-nom/static/media/banners1.7579e64f.png",
+    "static/media/banners2.png": "/tienda-nom/static/media/banners2.a7c976a5.png",
+    "static/media/banners3.png": "/tienda-nom/static/media/banners3.c60cf3e4.png",
+    "static/media/banners4.png": "/tienda-nom/static/media/banners4.00d8b69b.png",
+    "static/media/banners5.png": "/tienda-nom/static/media/banners5.5cfbcf85.png",
+    "static/media/banners6.png": "/tienda-nom/static/media/banners6.9a88e9f5.png",
+    "static/media/banners7.png": "/tienda-nom/static/media/banners7.ce8850b0.png",
+    "static/media/campera.jpg": "/tienda-nom/static/media/campera.bb0e33c8.jpg",
     "static/media/chango.f2b130e8.png": "/tienda-nom/static/media/chango.f2b130e8.png",
-    "static/media/menu.6ea28911.png": "/tienda-nom/static/media/menu.6ea28911.png"
+    "static/media/menu.6ea28911.png": "/tienda-nom/static/media/menu.6ea28911.png",
+    "static/media/remes.jpg": "/tienda-nom/static/media/remes.8d91a9f6.jpg",
+    "static/media/zapas.jpg": "/tienda-nom/static/media/zapas.ee0613a7.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.ad1e80f2.js",
-    "static/js/2.84c1090d.chunk.js",
-    "static/css/main.763b243b.chunk.css",
-    "static/js/main.99e42cec.chunk.js"
+    "static/js/runtime-main.61cd52e1.js",
+    "static/js/2.ee670847.chunk.js",
+    "static/css/main.4ead56ce.chunk.css",
+    "static/js/main.58bca268.chunk.js"
   ]
 }
