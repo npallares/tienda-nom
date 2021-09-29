@@ -13,7 +13,7 @@ export const Navbar =()=> {
             <nav className="nav">
                 <LogoModule/>
                 <div className="onlyresponsive">
-                    <div><img src={menu} className="menu" /></div>
+                    <div><img src={menu} /></div>
                 </div>
 
                 

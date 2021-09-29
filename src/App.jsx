@@ -14,6 +14,7 @@ import { ItemListContainerBuzos } from './Components/ItemComponents/itemListCont
 import { ItemListContainerRemeras } from './Components/ItemComponents/itemListContainerRemeras';
 import { LoginButton } from './Components/loginComponents/LoginButton';
 import { LogoutButton } from './Components/loginComponents/LogoutButton';
+import { HomeComponents } from './Components/homeComponents/homeComponents';
 
 
 
@@ -23,13 +24,14 @@ function App() {
   return (  
     <ShopComponentContext>
         <CartComponentContext>
-          <BrowserRouter basename = "/tienda-nom">
+          <BrowserRouter>
             <Navbar/>
             <Switch>
-              <Route exact path="/" component={ItemListContainer}/>
+              <Route exact path="/" component={HomeComponents}/>
+              {/* <Route exact path="/" component={ItemListContainer}/> */}
               {/* <Route path="/login/" component={LoginButton}/> */}
               {/* <Route path="/logout/" component={LogoutButton}/> */}
-              <Route path="/tienda-nom/" component={ItemListContainer}/>
+              <Route path="/tienda-nom" component={ItemListContainer}/>
               <Route path="/remeras" component={ItemListContainerRemeras}/>
               <Route path="/buzos" component={ItemListContainerBuzos}/>
               <Route path="/zapatillas" component={ItemListContainerZapatillas}/>
