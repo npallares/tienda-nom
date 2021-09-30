@@ -3,6 +3,9 @@ import chango from "./assets/chango.png"
 import { Link } from "react-router-dom"
 import { useContext,  useEffect, } from "react";
 import { CartContext } from "../../context/cartContext";
+import nikeIcon from "../../assets/icons/nike_icon.png"
+import topperIcon from "../../assets/icons/topper_icon.png"
+import adidasIcon from "../../assets/icons/adidas_icon.png"
 import { LoginButton } from "../loginComponents/LoginButton";
 import { LogoutButton } from "../loginComponents/LogoutButton";
 
@@ -31,16 +34,9 @@ export const ListModule = () =>{
             <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet"/> 
 
             <ul className="responsive">
-                <Link to={`/nike`}><li>Nike</li></Link>
-                <Link to={`/adidas`}><li>Adidas</li></Link>
-                <Link to={`/topper`}><li>Topper</li></Link>
-                {/* <Link to={`/zapatillas`}><li>Zapatillas</li></Link>
-                <Link to={`/buzos`}><li>Buzos</li></Link>
-                <Link to={`/remeras`}><li>Remeras</li></Link> */}
-                {/* <Link to={`/login`}><LoginButton/></Link>
-                {LoginButton ? <h5>Login</h5> : <h5>Logout</h5>}
-                <Link to={`/logout`}><LogoutButton/></Link> */}
-                
+                <Link to={`/nike`}><li><img src={nikeIcon} alt="Nike" className="icons"/></li></Link>
+                <Link to={`/adidas`}><li><img src={adidasIcon} alt="Adidas" className="icons"/></li></Link>
+                <Link to={`/topper`}><li><img src={topperIcon} alt="Topper" className="icons" /></li></Link>
                 <Link to={`/cart`}><li><img src={chango} className="chango" alt="chango" /><span className="itemQuantity none" id="itemQuantity">{cartQuantity}</span></li></Link>
             </ul>
         </>

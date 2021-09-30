@@ -38,8 +38,8 @@ function App() {
               <Route path="/topper" component={ItemListContainerTopper}/>
               <Route path="/nike" component={ItemListContainerNike}/>
               <Route path="/adidas" component={ItemListContainerAdidas}/>
-              <Route path="/cart" component={CartListComponent}/>
               <Route path="/producto/:productoId" component={ItemDetailContainer}/>
+              <Route path="/cart" component={CartListComponent}/>
               {/* <Route path="*" component={()=> <h1 className="red">404</h1>}/> */}
             </Switch>
           </HashRouter>

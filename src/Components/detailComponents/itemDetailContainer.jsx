@@ -1,4 +1,4 @@
-import "./style.css";
+import "./DetailStyle.css";
 import React, { useState, useEffect } from "react";
 import {Detail} from "../productComponents/indexProduct.jsx"
 import { useParams } from "react-router-dom";

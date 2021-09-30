@@ -40,6 +40,9 @@ nav li{
 
 nav li:hover{
     background-color: rgb(75, 77, 184);
+    border-radius: 5px;
+    width: auto;
+    height: 40px;
 }
 
 .contenedorimg{
@@ -96,6 +99,11 @@ nav li:hover{
     font-weight: 600;
     background-color: tomato;
     margin-left: -.3rem;
+}
+
+li .icons{
+    height: 40px;
+    width: auto;
 }
 
 
