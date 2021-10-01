@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/tienda-nom/static/css/main.f8ba0e6d.chunk.css",
-    "main.js": "/tienda-nom/static/js/main.947f4aa8.chunk.js",
-    "main.js.map": "/tienda-nom/static/js/main.947f4aa8.chunk.js.map",
+    "main.css": "/tienda-nom/static/css/main.3af91a94.chunk.css",
+    "main.js": "/tienda-nom/static/js/main.8fc65641.chunk.js",
+    "main.js.map": "/tienda-nom/static/js/main.8fc65641.chunk.js.map",
     "runtime-main.js": "/tienda-nom/static/js/runtime-main.61cd52e1.js",
     "runtime-main.js.map": "/tienda-nom/static/js/runtime-main.61cd52e1.js.map",
     "static/js/2.be8d8a8c.chunk.js": "/tienda-nom/static/js/2.be8d8a8c.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.dd06ccf8.chunk.js": "/tienda-nom/static/js/3.dd06ccf8.chunk.js",
     "static/js/3.dd06ccf8.chunk.js.map": "/tienda-nom/static/js/3.dd06ccf8.chunk.js.map",
     "index.html": "/tienda-nom/index.html",
-    "static/css/main.f8ba0e6d.chunk.css.map": "/tienda-nom/static/css/main.f8ba0e6d.chunk.css.map",
+    "static/css/main.3af91a94.chunk.css.map": "/tienda-nom/static/css/main.3af91a94.chunk.css.map",
     "static/js/2.be8d8a8c.chunk.js.LICENSE.txt": "/tienda-nom/static/js/2.be8d8a8c.chunk.js.LICENSE.txt",
     "static/media/adidas_icon.ada5d878.png": "/tienda-nom/static/media/adidas_icon.ada5d878.png",
     "static/media/banners1.png": "/tienda-nom/static/media/banners1.7579e64f.png",
@@ -31,7 +31,7 @@
   "entrypoints": [
     "static/js/runtime-main.61cd52e1.js",
     "static/js/2.be8d8a8c.chunk.js",
-    "static/css/main.f8ba0e6d.chunk.css",
-    "static/js/main.947f4aa8.chunk.js"
+    "static/css/main.3af91a94.chunk.css",
+    "static/js/main.8fc65641.chunk.js"
   ]
 }
