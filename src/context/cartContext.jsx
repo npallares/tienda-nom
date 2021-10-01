@@ -4,11 +4,14 @@ import { ShopContext } from "../context/shopContext";
 
 export const CartContext = createContext();
 
+let storageList = (JSON.parse(window.localStorage.getItem(`lista`)))
+
 // Local list recupera del storage los elementos para setearlos como parametro de inicio de cart 
-const localList=(JSON.parse(window.localStorage.getItem(`lista`)))
+const localList= storageList ? storageList : []
+
 
 // LocalQuantity suma la cantidad de stock en el storage para ser usado como valor inicial de cartQuantity
-const localQuantity = localList.reduce((acc,el)=>acc+el.stock,0)
+const localQuantity = localList ? (localList.reduce((acc,el)=>acc+el.stock,0)) : []
 
 export const CartComponentContext = ({children}) =>{
 
@@ -44,7 +47,7 @@ export const CartComponentContext = ({children}) =>{
                         }
                 }else{
                     return el
-                }                 
+                }                
             })
             setCart(newCart)                
         }else{
@@ -139,7 +142,7 @@ export const CartComponentContext = ({children}) =>{
             setCartQuantity(newCartIconNumber)
         } else {
             setCart([])
-            window.localStorage.setItem("lista", JSON.stringify([]))
+            localStorage.setItem("lista", JSON.stringify([]))
             setCartQuantity(0)
         }
     }
