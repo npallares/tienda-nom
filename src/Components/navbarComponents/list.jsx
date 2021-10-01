@@ -23,7 +23,8 @@ export const ListModule = ({ navActive, handleOpenNav, widthScreen }) => {
       }
     };
     setSpan();
-  }, [cartQuantity, widthScreen]);
+
+  }, [cartQuantity]);
 
   return (
     <>

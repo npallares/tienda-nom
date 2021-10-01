@@ -88,6 +88,7 @@
 }
 
 .title_container{
+    font-family: 'Hind Siliguri', sans-serif;
     height: auto;
     font-size: .9rem;
     font-weight: 300;
@@ -138,6 +139,7 @@ input:focus{
 } 
 
 .numero_container{
+    font-family: 'Hind Siliguri', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -201,6 +203,7 @@ input:focus{
 }
 
 .price{
+    font-family: 'Hind Siliguri', sans-serif;
     font-size: 2rem;
     font-weight: 700;
 }
