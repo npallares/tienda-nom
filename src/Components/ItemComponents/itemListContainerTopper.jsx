@@ -1,11 +1,13 @@
 import "./style.css";
 import React, { useState, useEffect } from "react";
 import { Card } from "./card";
+import ItemCarrousell from "./ItemCarrousell";
 
 
 export const ItemListContainerTopper = () =>{
     
     const[topper, setTopper] = useState([]);
+    const imagesTopper = ["topper2.png","topper1.png"]
      
     useEffect(()=>{
 
@@ -19,6 +21,8 @@ export const ItemListContainerTopper = () =>{
     },[])  
 
     return(
+        <>
+            <ItemCarrousell autoplay={true} images={imagesTopper}/>
             <div className="mlContainer">
                 {topper.map(el=>{
                     return(
@@ -26,7 +30,7 @@ export const ItemListContainerTopper = () =>{
                     )
                 })}
             </div>
-        
+        </>
         
     )
 }

@@ -6,11 +6,13 @@ import { CartContext } from "../../context/cartContext";
 import nikeIcon from "../../assets/icons/nike_icon.png";
 import topperIcon from "../../assets/icons/topper_icon.png";
 import adidasIcon from "../../assets/icons/adidas_icon.png";
+import sweaterIcon from "../../assets/icons/sweater_icon.png";
+import shoesIcon from "../../assets/icons/shoes_icon.png";
+import tshirtIcon from "../../assets/icons/tshirt_icon.png";
 import { LoginButton } from "../loginComponents/LoginButton";
 import { LogoutButton } from "../loginComponents/LogoutButton";
 
 export const ListModule = ({ navActive, handleOpenNav, widthScreen }) => {
-  
   const { cartQuantity } = useContext(CartContext);
   useEffect(() => {
     // seteo de span ref. al numero del cart
@@ -23,7 +25,6 @@ export const ListModule = ({ navActive, handleOpenNav, widthScreen }) => {
       }
     };
     setSpan();
-
   }, [cartQuantity]);
 
   return (
@@ -35,6 +36,36 @@ export const ListModule = ({ navActive, handleOpenNav, widthScreen }) => {
       />
 
       <ul className={navActive ? "responsive isActive" : "responsive"}>
+        <Link to={`/zapatillas`}>
+          <li onClick={() => handleOpenNav()}>
+            <img src={shoesIcon} alt="Zapatillas" className="icons" />
+            {widthScreen < 700 ? (
+              <span className="nameCategory">Zapatillas</span>
+            ) : (
+              ""
+            )}
+          </li>
+        </Link>
+        <Link to={`/buzos`}>
+          <li onClick={() => handleOpenNav()}>
+            <img src={sweaterIcon} alt="Buzos" className="icons" />
+            {widthScreen < 700 ? (
+              <span className="nameCategory">Buzos</span>
+            ) : (
+              ""
+            )}
+          </li>
+        </Link>
+        <Link to={`/remeras`}>
+          <li onClick={() => handleOpenNav()}>
+            <img src={tshirtIcon} alt="Remeras" className="icons" />
+            {widthScreen < 700 ? (
+              <span className="nameCategory">Remeras</span>
+            ) : (
+              ""
+            )}
+          </li>
+        </Link>
         <Link to={`/nike`}>
           <li onClick={() => handleOpenNav()}>
             <img src={nikeIcon} alt="Nike" className="icons" />

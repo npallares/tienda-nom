@@ -1,11 +1,13 @@
 import "./style.css";
 import React, { useState, useEffect } from "react";
 import { Card } from "./card";
+import ItemCarrousell from "./ItemCarrousell";
 
 
 export const ItemListContainerZapatillas = () =>{
     
     const[zapatillas, setZapatillas] = useState([]);
+    const imagesZapatillas = ["adidas1.jpg","topper1.png"]
   
     useEffect(()=>{
 
@@ -19,6 +21,8 @@ export const ItemListContainerZapatillas = () =>{
     },[])  
 
     return(
+        <>
+            <ItemCarrousell autoplay={true} images={imagesZapatillas}/>
             <div className="mlContainer">
                 {zapatillas.map(el=>{
                     return(
@@ -26,7 +30,7 @@ export const ItemListContainerZapatillas = () =>{
                     )
                 })}
             </div>
-        
+        </>
         
     )
 }

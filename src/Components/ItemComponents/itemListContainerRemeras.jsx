@@ -1,11 +1,13 @@
 import "./style.css";
 import React, { useState, useEffect } from "react";
 import { Card } from "./card";
+import ItemCarrousell from "./ItemCarrousell";
 
 
 export const ItemListContainerRemeras = () =>{
     
     const[remeras, setRemeras] = useState([]);
+    const imagesRemeras = ["remeras1.png","remeras2.png"]
   
     useEffect(()=>{
 
@@ -19,6 +21,8 @@ export const ItemListContainerRemeras = () =>{
     },[])  
 
     return(
+        <>
+            <ItemCarrousell autoplay={true} images={imagesRemeras}/>
             <div className="mlContainer">
                 {remeras.map(el=>{
                     return(
@@ -26,7 +30,7 @@ export const ItemListContainerRemeras = () =>{
                     )
                 })}
             </div>
-        
+        </>
         
     )
 }

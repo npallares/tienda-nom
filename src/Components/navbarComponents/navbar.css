@@ -146,7 +146,7 @@ li .icons{
         width:60vw;
         padding:0;
         margin:0;
-        transition:ease-in-out 1s;
+        transition:ease-in-out .5s;
     }
 
     .responsive li{
@@ -168,7 +168,7 @@ li .icons{
 
     .isActive{
         left:0;
-        transition:ease 1s;
+        transition:ease .5s;
     }
     
 

@@ -1,11 +1,13 @@
 import "./style.css";
 import React, { useState, useEffect } from "react";
 import { Card } from "./card";
+import ItemCarrousell from "./ItemCarrousell";
 
 
 export const ItemListContainerBuzos = () =>{
     
     const[buzos, setBuzos] = useState([]);
+    const imagesBuzos = ["adidas2.jpg","topper2.png"]
    
     useEffect(()=>{
 
@@ -19,6 +21,8 @@ export const ItemListContainerBuzos = () =>{
     },[])  
 
     return(
+        <>
+            <ItemCarrousell autoplay={true} images={imagesBuzos}/>
             <div className="mlContainer">
                 {buzos.map(el=>{
                     return(
@@ -26,7 +30,7 @@ export const ItemListContainerBuzos = () =>{
                     )
                 })}
             </div>
-        
+        </>
         
     )
 }
