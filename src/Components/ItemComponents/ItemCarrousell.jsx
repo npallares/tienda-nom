@@ -34,11 +34,11 @@ const ItemCarrousell = (props) => {
   
 
   return (
-    <div className="slider-container"  >
+    <div className="slider-container-item"  >
       <img
         src={require(`../../assets/images/${selectedImage}`).default}
         alt="slider" 
-        className="slider"       
+        className="slider-item"       
       />
 
       <div className="slider-container-boton">

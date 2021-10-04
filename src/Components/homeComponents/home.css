@@ -22,10 +22,30 @@
   /* border: 3px solid rgb(215, 5, 243); */
 }
 
+/* Aplica solo a carrusell de items */
+.slider-container-item{
+  display: block;
+  position: relative;
+  min-width: 100%;
+  height: 350px;
+  background-size: cover;
+  overflow: hidden;
+  top:0;
+}
+
 .slider {
   display: block;
   position: relative;
   width:100%;  
+}
+
+/* Aplica solo a carrusell de items */
+.slider-item {
+  display: block;
+  position: relative;
+  width:100%; 
+  height: auto; 
+  top:-100px;
 }
 
 .slider-container-boton{
