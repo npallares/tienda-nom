@@ -12,43 +12,43 @@
 
 /************* CARROUSELL ***************/
 
-.slider-container{
+.slider-container {
   display: block;
   position: relative;
   min-width: 100%;
   height: auto;
   background-size: cover;
-  top:0;
+  top: 0;
   /* border: 3px solid rgb(215, 5, 243); */
 }
 
 /* Aplica solo a carrusell de items */
-.slider-container-item{
+.slider-container-item {
   display: block;
   position: relative;
   min-width: 100%;
   height: 350px;
   background-size: cover;
   overflow: hidden;
-  top:0;
+  top: 0;
 }
 
 .slider {
   display: block;
   position: relative;
-  width:100%;  
+  width: 100%;
 }
 
 /* Aplica solo a carrusell de items */
 .slider-item {
   display: block;
   position: relative;
-  width:100%; 
-  height: auto; 
-  top:-100px;
+  width: 100%;
+  height: auto;
+  top: -100px;
 }
 
-.slider-container-boton{
+.slider-container-boton {
   position: absolute;
   display: flex;
   justify-content: space-between;
@@ -59,7 +59,19 @@
   /* border: 1px solid green; */
 }
 
-.slider-boton{
+/* Aplica solo a carrusell de items */
+.slider-container-boton-item {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  display: flex;
+  width: 100%;
+  height: auto;
+  top: 50%;
+  /* border: 1px solid green; */
+}
+
+.slider-boton {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,7 +81,7 @@
   background-color: rgb(91, 93, 216);
   color: white;
   transition: all 0.3s ease;
-  font-family:sans-serif;
+  font-family: sans-serif;
   font-size: 15px;
   font-weight: 700;
   cursor: pointer;
@@ -78,18 +90,16 @@
   margin: 0 3rem;
 }
 
-.slider-boton:hover{
+.slider-boton:hover {
   background-color: rgb(36, 36, 163);
 }
 
-
 /************* LIST CATEGORIES ***************/
-
 
 .listCategoriesComponent {
   display: flex;
   flex-direction: row;
-  justify-content:space-around;
+  justify-content: space-around;
   align-items: flex-start;
   width: 100%;
   height: auto;
@@ -98,25 +108,25 @@
   /* border: 1px solid rgb(92, 205, 107); */
 }
 
-.card-container{
-display: flex;
-justify-content: flex-start;
-align-items: center;
-flex-direction: column;
-position: relative;
-height: auto;
-width: 30%;
-/* background-color: blue; */
-/* border:1px solid red */
+.card-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  height: auto;
+  width: 30%;
+  /* background-color: blue; */
+  /* border:1px solid red */
 }
 
-.card-container img{
+.card-container img {
   width: 100%;
   height: auto;
   /* background-color: brown; */
 }
 
-.card-text-container{
+.card-text-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -127,51 +137,64 @@ width: 30%;
   /* border:1px solid slateblue; */
 }
 
-.card-text-container p{
+.card-text-container p {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 90%;
-  color:rgb(136, 136, 136);
-  font-size: .8rem;
+  color: rgb(136, 136, 136);
+  font-size: 0.8rem;
   text-align: center;
-  font-family: 'Hind Siliguri', sans-serif;
+  font-family: "Hind Siliguri", sans-serif;
   font-weight: 400;
   cursor: pointer;
   /* border: 1px solid green; */
- 
 }
-.card-text-container title{
+.card-text-container title {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 90%;
-  color:rgb(44, 44, 44);
+  color: rgb(44, 44, 44);
   font-size: 1.7rem;
   text-align: center;
-  font-family: 'Hind Siliguri', sans-serif;
+  font-family: "Hind Siliguri", sans-serif;
   font-weight: 300;
   margin-top: 1.2rem;
   /* border: 1px solid green; */
 }
 
-.card-container span{
+.card-container span {
   cursor: pointer;
 }
 
-
-
-
 @media (max-width: 700px) {
-  .listCategoriesComponent{
+  .listCategoriesComponent {
     flex-direction: column;
     align-items: center;
   }
 
-  .card-container{
+  .card-container {
     width: 90%;
-    padding-bottom: 100px
+    padding-bottom: 100px;
     /* border: 3px solid blue; */
-  };
+  }
 
+  /* Aplica solo a carrusell de items */
+  .slider-container-item {
+    display: block;
+    position: relative;
+    min-width: 100%;
+    height: 100%;
+    top: 0;
+    /* border: 1px solid red; */
+  }
+
+  /* Aplica solo a carrusell de items */
+  .slider-item {
+    display: block;
+    position: relative;
+    width: 100%;
+    top:0;
+  }
 }

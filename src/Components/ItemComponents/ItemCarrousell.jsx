@@ -41,7 +41,7 @@ const ItemCarrousell = (props) => {
         className="slider-item"       
       />
 
-      <div className="slider-container-boton">
+      <div className="slider-container-boton-item">
         <span onClick={previous} className="slider-boton ">{`<`}</span>
         <span onClick={next} className="slider-boton">{`>`}</span>
       </div>
